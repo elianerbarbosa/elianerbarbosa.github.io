@@ -1,0 +1,47 @@
+responcividade com mudanção de cor de fundo de acordo com o tamanho
+a
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio01</title>
+
+após o cabeçalho introdutório e <title></title> colocar este código
+<style>
+body{
+background-color: green;
+}
+
+@media screen and (max-width: 768px){
+body{
+background-color: blue;
+ }
+}
+
+@media screen and (max-width: 600px){
+body{
+background-color: red;
+ }
+}
+</style>
+-----------------------CSS-responsivo----------------------------------
+/*tablets*/
+@media screen and (max-width: 768px){
+section,aside {
+width: 100%;
+padding: 0;
+  }
+}
+/*celular*/
+@media screen and (max-width: 600px){
+nav li {
+float: none;
+text-align: center;
+width: 100%;
+  }
+footer p {
+display: none;
+     }
+}
