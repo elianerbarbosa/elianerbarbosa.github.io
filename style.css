@@ -1,0 +1,545 @@
+@importar  url ( 'https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap' ){
+
+}
+@importar  URL ( 'https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap' ){
+
+}
+@media screen and (max-width: 768px){
+}
+
+@media screen and (max-width: 600px){
+
+   header .navegacao-primaria li a {
+       color: black;
+   }
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+position: bottom;
+}
+
+body {
+    padding: 0;
+    box-sizing: center;
+    background-color: aqua;
+    position: center;
+    
+}
+
+/*header*/
+
+header {
+    background-color: blue;
+    padding: 10px;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+
+header h1 {
+    color: whitesmoke;
+    font-size: 2.5rem;
+}
+
+header span {
+    color: #4a63d2;
+}
+
+header .navegacao-primaria {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+header .navegacao-primaria li a {
+    width: 0px;
+    height: 0px;
+    color: white;
+    font-size: 1.3rem;   
+}
+
+/* tracinho no menu */ /* modificar o red para transparente */
+header .navegacao-primaria li a::after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-bottom: 4px solid aqua;
+    display: block;
+    transition: .9s;
+}
+
+/* colocar o tracinho para aparecer somente qndo passar mouse */
+
+header .navegacao-primaria li a:hover::after {
+    width: 100%;
+    height: 0px;
+    padding: 0px;
+    border-bottom: 4px solid aqua;
+}
+
+
+/*dowload cv secao*/
+
+.section-div {
+    animation: inicialize .7s forwards;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+    align-items: center;
+    gap: 90px;
+    padding: 90px;
+    background-color: whitesmoke;
+
+}
+
+.section-div div {
+    margin-top: 120px;
+    align-self: start;
+    display: grid;
+    gap: 30px;
+}
+
+.section-div div h2 {
+    font-family: 'Poppins' sans-serif;
+    font-weight: 600;
+    color: blue;
+}
+.section-div div p{
+    font-family: 'Poppins' sans-serif;
+    font-weight: 200;
+    color: blue;
+}
+
+.section-div div a {
+    justify-self: start;
+    color: blue;
+    padding: 15px 40px;
+    border-radius: 5px;
+    border: 2px solid aqua;
+}
+
+.section-div img {
+    max-width: 100%;
+    border-radius: 500px;
+    border: 2px solid aqua;
+}
+
+.digitando::after {
+    content: '|';
+    margin-left: 5px;
+    opacity: 1;
+    animation: blink .5s infinite;
+}
+
+
+/* Sidebar Div--------------- */
+div .menulateral {
+    color: blue;
+    border-top-right-radius: 10px;
+  }
+
+  /* menu lateral */
+  div .menulateral {
+    cursor: pointer;
+    padding: 30px;
+
+  }
+
+  /* links */
+  div a {
+    font-size: 18px;
+    color: #fff;
+align-items: normal;
+padding-top: 0px;
+
+  }
+
+  /* menu lateral */
+  div  a:hover {
+    color: blue;
+    background: aqua;
+    background-color: aqua;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+
+
+@keyframes blink {
+    from {
+        opacity: 1;
+   }
+    to {
+opacity: 0;
+    }
+}
+
+@keyframes inicialize {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+    to {
+opacity: 1;
+transform: translate3d(0, 0, 0);
+    }
+}
+
+/* seção principal sobre mim */
+
+main {
+    background-color: blue;
+color: white;
+}
+
+main .sobre{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px;
+    text-justify: center;
+}
+
+.sobre_titulo {
+    margin: 30px 0;
+    grid-column: 1/-1;
+    text-align: center;
+    color:aliceblue
+
+}
+ .sobre_titulo h1{
+    font-size: 2.5rem;
+    color: aqua;
+    margin-bottom: 15px;
+    font-family: 'Berkshire Swash', cursive;
+ }
+
+ html {
+    font-size: 16px;
+ }
+
+ .sobre_titulo p {
+    color: whitesmoke;
+    margin-bottom: 1rem;
+    position: flex;
+    font-size: 1.4rem;
+    text-justify: center;
+ }
+
+ .sobre_titulo div {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+ }
+
+ /*três pontos*/
+ .sobre_titulo span {
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: aqua;
+ }
+
+ .sobre img {
+    animation: ladoSecao .5s ease-in-out forwards;
+    cursor: pointer;
+    grid-row: 2;
+    max-width: 100%;
+    border-radius: 4px;
+    filter: blur(0);
+    border-radius: 200PX;
+    border: 2px solid aqua;
+ }
+
+ .sobre img:hover {
+    transition: 5s ease-in;
+    filter: blur(1px);
+ }
+
+ .sobre_conteudo {
+    animation: sobeSecao .6s ease-in-out forwards;
+    grid-column: 2/-1;
+    display: grid;
+    color: whitesmoke;
+    grid-template-columns: 1fr 1fr;
+ }
+
+ /* 2ª seção coluna texto*/
+ .sobre_texto {
+    display: grid;
+    grid-column: 1/-1;
+    grid-template-columns: 1fr 1fr;
+ }
+
+ /* Eu sou Eliane Barbosa-Eliane Ramos*/
+ .sobre_texto h1 {
+    font-size: 2.3rem;
+    color:aliceblue;
+    grid-column: 1/-1;
+ }
+
+ /*traço*/
+ .sobre_texto h1::after {
+    background-color: aqua;
+    height: 6px;
+    width: 60px;
+    margin: 20px 0;
+    content: '';
+    display: block;
+    border-radius: 5px;
+ }
+
+ .sobre_texto p {
+    font-size: 1.3rem;
+    grid-row: 2;
+    grid-column: 1/-1;
+    text-justify: center;
+    text-align: center;
+
+ }
+
+ .sobre_info {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 1/-1;
+    gap: 15px;
+    align-items: center;
+ }
+
+ .sobre_info i {
+    color: aqua;
+    display: inline-block;
+    padding: 0px;
+    font-size: 1.5rem;
+ }
+
+ .sobre_info p {
+    font-size: .9,5rem;
+    text-justify: center;
+    text-align: center;
+ }
+
+ @keyframes sobeSecao {
+    from{
+        transition: .5s;
+        transform: translate3d(60px, 0, 0);
+    }
+    to{
+        transform: translate3d(0, 0, 0);
+    }
+ }
+
+ @keyframes sobeSecao {
+    from{
+        transition: .5s;
+        transform: translate3d(60px, 0, 0);
+    }
+    to{
+        transform: translate3d(0, 0, 0);
+    }
+ }
+
+ /* RESPONSIVO */
+
+ @media(max-width: 992px) {
+    .section-div img {
+        display: none;
+    }
+/* não esta funcionando foto- 1ª foto- não esta indo para tras do trexto */
+    .section-div {
+        background-image: url(./img/Elyane.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    header {
+        justify-content: space-between;
+        padding: 30px 70px;
+    }
+
+    header .navegacao-primaria {
+        display: none;
+    }
+
+    header i {
+        color: aquamarine;
+        font-size: 3rem;
+    }
+
+    /* não esta aparecendo npo site- resolver */
+ header .navegacao-primaria.ativado {
+background-color: linear-gradient blue;
+position: absolute;
+display: grid;
+top: 80px;
+color: aquamarine;
+z-index: 1;
+padding: 30px;
+font-size: 1.6rem;
+font-weight: bold;
+border-radius: 0 0 4px 4px;
+right: 20px;
+animation: sobeSecao .8s ease-in-out forwards;
+ }
+}
+
+ @media(max-width: 992px) {
+    .sobre img {
+        grid-column: 1/-1;
+        justify-self: center;
+    }
+
+    .sobre_conteudo {
+        grid-column: 1/-1;
+    }
+ }
+
+ /*sobre mim ----------------------- */
+ /* My Service */
+
+.services {
+    background-color: whitesmoke;
+    margin-top: -30px;
+    padding: 60px;
+}
+
+
+.my_service {
+    padding: 60px;
+    color: #fff;
+}
+
+.my_service ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.my_service ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    border-radius: 6px;
+    align-content: center;
+    display: grid;
+    gap: 30px;
+    text-align: center;
+    max-width: 300px;
+    height: 300px;
+    background-color: aqua;
+    text-justify: center;
+
+}
+
+.my_service ul li i {
+    font-size: 2.7rem;
+    color: blue;
+}
+
+.my_service ul li h3 {
+    color: #fff;
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.my_service ul li p {
+    color: blue;
+    font-size: 1rem;
+    text-justify: center;
+}
+
+.my_service li::before {
+    content: '';
+    transition: .5s ease-in-out;
+    border-radius: 6px;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    border-top: 2px solid transparent;
+    border-right: 2px solid transparent;
+}
+
+.my_service li::after {
+    content: '';
+    transition: .5s ease-in-out;
+    border-radius: 6px;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+}
+
+.my_service li:hover::before {
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid blue;
+    border-right: 2px solid rgb(0, 153, 255);
+}
+
+.my_service li:hover::after {
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid blue;
+    border-left: 2px solid rgb(0, 153, 255);
+    
+}
+/*o que me motiva*/
+
+.my_resume{
+
+}
+ .sobre_titulo p {
+    color: blue;
+    background-color: white;
+}
+
+.sobre_titulo h1 {
+    color: white;
+}
+ .footer {
+    color: blue;
+    text-align: center;
+    font-weight: bold
+ }
+ div .redes-sociais{
+    padding: 30px;
+    display: inline;
+    align-content: center;
+    justify-content: space-around;
+ }  
+
+ .rodapé {
+    background-color: #fff;
+    padding: 30px;
+    display: block;
+    align-content: center;
+    justify-content: space-around;
+ }
+
+ @media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 600px) {
+
+   header .navegacao-primaria li a {
+       color: black;
+   }
+}

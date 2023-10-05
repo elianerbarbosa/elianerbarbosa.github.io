@@ -1,0 +1,235 @@
+@media screen and (max-width: 768px){
+}
+
+@media screen and (max-width: 600px){
+
+   header .navegacao-primaria li a {
+       color: black;
+   }
+}
+
+  
+        /* estilo padrão */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+  
+        /* fundo */
+        body {
+            background-color: aqua;
+        }
+  
+        /* Container: pagina centralizado, argura e altura */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 800px;
+            height: 600px;
+        }
+  
+        /* preenchimento cabeçalho */
+        .main-heading {
+            padding: 2rem 0 2rem 0;
+        }
+  
+        .content {
+            position: relative;
+        }
+  
+        
+        /* colocar contéudo do centro do carrossel */
+        .carousel-content {
+            position: absolute;
+  
+            /* centralizar horizontalmente e verticalmente */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 50;
+        }
+  
+        .carousel-heading {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+  
+        /* Fim do estilo carrossel */
+  
+        /* apresentação slide */
+        .slideshow {
+            height: 100%;
+            overflow: hidden;
+  
+            /* ocultar slide na sireção x */
+            position: relative;
+        }
+  
+        /* estilo de imagem */
+        .slideshow-wrapper {
+            display: flex;
+  
+            /* largura proporcional se 4 imagens largura 400% se 5 imagens largura de 500%. */
+            width: 400%;
+            height: 100%;
+            position: relative;
+  
+            /* animação */
+            animation: slideshow 20s infinite;
+        }
+  
+        /* largura e altura de imagens */
+        .slide {
+            width: 100%;
+            height: 100%;
+        }
+  
+        .slide-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+  
+        /* @keyframes aanimação com configurações 4 imagens. */
+        @keyframes slideshow {
+            0% {
+                left: 0;
+            }
+  
+            10% {
+                left: 0;
+            }
+  
+            15% {
+                left: -100%;
+            }
+  
+            25% {
+                left: -100%;
+            }
+  
+            30% {
+                left: -200%;
+            }
+  
+            40% {
+                left: -200%;
+            }
+  
+            45% {
+                left: -300%;
+            }
+  
+            55% {
+                left: -300%;
+            }
+  
+            60% {
+                left: -200%;
+            }
+  
+            70% {
+                left: -200%;
+            }
+  
+            75% {
+                left: -100%;
+            }
+  
+            85% {
+                left: -100%;
+            }
+  
+            90% {
+                left: 0%;
+            }
+        }
+  
+        /* fim da configuração slide */
+  
+        /* botão de controle do carrossel */
+        .slide-btn {
+            background-color: whitesmoke;
+            border-radius: 50%;
+            border: .2rem solid blue;
+            width: 1.2rem;
+            height: 1.2rem;
+            outline: none;
+            cursor: pointer;
+  
+            /* botão parte inferior */
+            position: absolute;
+            bottom: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 70;
+        }
+  
+        /* colocando botão na posição correta */
+        .slide-btn-1 {
+            left: 45%;
+        }
+  
+        .slide-btn-2 {
+            left: 50%;
+        }
+  
+        .slide-btn-3 {
+            left: 55%;
+        }
+  
+        .slide-btn-4 {
+            left: 60%;
+        }
+  
+        /* botão para a imagem associada a ele. */
+        .slide-btn-1:focus~.slideshow-wrapper {
+            animation: none;
+            left: 0;
+        }
+  
+        .slide-btn-2:focus~.slideshow-wrapper {
+            animation: none;
+            left: -100%;
+        }
+  
+        .slide-btn-3:focus~.slideshow-wrapper {
+            animation: none;
+            left: -200%;
+        }
+  
+        .slide-btn-4:focus~.slideshow-wrapper {
+            animation: none;
+            left: -300%;
+        }
+  
+        /* cor de fnd qnd mudar slide */
+        .slide-btn:focus {
+            background-color: #308d46;
+        }
+  
+    
+
+
+body {
+    text-align: center;
+}
+
+        @media screen and (max-width: 768px){
+         }
+        
+        @media screen and (max-width: 600px){
+        
+            header .navegacao-primaria li a {
+                color: black;
+            }
+    }
+        
+
+
