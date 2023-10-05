@@ -14,7 +14,7 @@ max-width: 600px;
      .input:hover, textarea:hover, input:focus, textarea:focus {
          max-width: 600px;
       }
-      form label {
+      .form label {
          max-width: 600px;
       }
 }}}
@@ -43,7 +43,7 @@ h1 {
     text-shadow: 5px 5px 5px blue;
 }
 /*parte interna formulário*/
-input, textarea {
+.input, textarea {
     width: 150px;
     padding: 10px;
     color: white;
@@ -77,7 +77,7 @@ input, textarea {
     color: blue;
 }
 
-textarea {
+.textarea {
     width: 400px;
     height: 120px;
     line-height: 20px;
@@ -85,7 +85,7 @@ textarea {
 
 }
 
-form label {
+.form label {
     margin: 10px;
     color: aqua;
     font-weight: bold;
