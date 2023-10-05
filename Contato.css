@@ -15,7 +15,7 @@ text-justify: center;
 text-align: center;
 }
 
-formulario {
+.formulario {
     font-family: 'Poppins' sans-serif;
     font-size: 17px;
     background-color: blue;
@@ -51,7 +51,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
 
 }
 
-enviar {
+.enviar {
     background-color: aqua;
     height: 40px;
     width: 100px;
