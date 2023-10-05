@@ -4,11 +4,6 @@
 @importar  URL ( 'https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap' ){
 
 }
-<style>
- @import url(tiny.css) (min-width:300px);
- @import url(small.css) (min-width:600px);
- @import url(big.css) (min-width:900px);
-</style>
 
 @media screen and (max-width: 300px) {
   
