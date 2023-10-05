@@ -42,7 +42,7 @@ h1 {
 
 }
 
-.input:hover .textarea:hover .input:focus .textarea:focus {
+.input:hover, textarea:hover, input:focus, textarea:focus {
     border-color: aqua;
     box-shadow: 5px 0px 9px rgb(114, 200, 205);
     background-color: #66FFFF;
