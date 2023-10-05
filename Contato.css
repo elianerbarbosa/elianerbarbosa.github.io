@@ -11,7 +11,7 @@ max-width: 600px;
      input, textarea {
          max-width: 600px;
 }
-     input:hover, textarea:hover, input:focus, textarea:focus {
+     .input:hover, textarea:hover, input:focus, textarea:focus {
          max-width: 600px;
       }
       form label {
@@ -56,7 +56,7 @@ input, textarea {
 
 }
 
-input:hover, textarea:hover, input:focus, textarea:focus {
+.input:hover, textarea:hover, input:focus, textarea:focus {
     border-color: aqua;
     box-shadow: 5px 0px 9px rgb(114, 200, 205);
     background-color: #66FFFF;
