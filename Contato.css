@@ -1,4 +1,42 @@
+@media screen and (max-width: 768px){
+}
 
+@media screen and (max-width: 600px){
+    body{
+       max-width: 600px;
+    }
+ .formulario {
+max-width: 600px;
+  }
+         input .textarea {
+         max-width: 600px;
+}
+      form label {
+         max-width: 600px;
+      }
+    textarea:hover{
+         max-width: 600px;
+    }
+input:focus{
+         max-width: 600px;
+    }
+    textarea:focus{
+         max-width: 600px;
+    }
+    textarea:hover{
+         max-width: 600px;
+    }
+    input:focus{
+         max-width: 600px;
+    }
+    textarea:focus{
+         max-width: 600px;
+    }
+.enviar {
+         max-width: 600px;
+    }
+
+}
 
 body {
 margin: 0%; 
