@@ -102,16 +102,9 @@ header .navegacao-primaria li a:hover::after {
 /*dowload cv secao*/
 @media screen and (max-width: 768px){
   
-}
 @media screen and (max-width: 300px){
-  
-}
 
 @media screen and (max-width: 600px){
-
-}
-}
-
 
 .section-div {
     animation: inicialize .7s forwards;
@@ -163,7 +156,9 @@ header .navegacao-primaria li a:hover::after {
     opacity: 1;
     animation: blink .5s infinite;
 }
-
+}
+}
+}
 
 /* Sidebar Div--------------- */
 @media screen and (max-width: 768px){
