@@ -10,15 +10,36 @@
  @import url(big.css) (min-width:900px);
 </style>
 @media screen and (max-width: 300px) {
- /* estilos */
+   header .navegacao-primaria li a {
+    header {
+    }
+     section-div{
+     }
+      menulateral
+    navegacao-primaria li a{
 }
 @media screen and (max-width: 768px){
+   header .navegacao-primaria li a {
+    header {
+    }
+     section-div{
+     }
+      menulateral
+    navegacao-primaria li a{
 }
+
 
 @media screen and (max-width: 600px){
 
    header .navegacao-primaria li a {
        color: black;
+    header {
+    }
+     section-div{
+     }
+      menulateral
+    navegacao-primaria li a{
+}
    }
 }
 
