@@ -420,6 +420,32 @@ animation: sobeSecao .8s ease-in-out forwards;
 
  /*sobre mim ----------------------- */
  /* My Service */
+ @keyframes services {
+    from{
+        transition: .5s;
+        transform: translate3d(60px, 0, 0);
+    }
+    to{
+        transform: translate3d(0, 0, 0);
+    }
+ }
+
+ @keyframes services {
+    from{
+        transition: .5s;
+        transform: translate3d(60px, 0, 0);
+    }
+    to{
+        transform: translate3d(0, 0, 0);
+    }
+ }
+
+ /* RESPONSIVO */
+
+ @media(max-width: 600px) {
+    .section-div img {
+        display: none;
+    }}
 
 .services {
     background-color: whitesmoke;
