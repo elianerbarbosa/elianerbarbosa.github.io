@@ -8,19 +8,19 @@
  .formulario {
 max-width: 600px;
   }
-     input, textarea {
+     .input, textarea {
          max-width: 600px;
 }
      .input:hover {
          max-width: 600px;
       }
-    textarea:hover{
+    .textarea:hover{
          max-width: 600px;
     }
-    input:focus{
+   . input:focus{
          max-width: 600px;
     }
-    textarea:focus{
+    .textarea:focus{
          max-width: 600px;
     }
       .form label {
@@ -65,7 +65,7 @@ h1 {
 
 }
 
-.input:hover, textarea:hover, input:focus, textarea:focus {
+.input:hover .textarea:hover .input:focus .textarea:focus {
     border-color: aqua;
     box-shadow: 5px 0px 9px rgb(114, 200, 205);
     background-color: #66FFFF;
