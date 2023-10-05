@@ -2,11 +2,22 @@
 }
 
 @media screen and (max-width: 600px){
-
-   header .navegacao-primaria li a {
-       color: black;
-   }
+    body{
+       max-width: 600px;
+    }
+  .container {
+max-width: 600px;
+  }
+      .main-heading{
+         max-width: 600px;
 }
+      .content{
+         max-width: 600px;
+      }
+      .slideshow{
+         max-width: 600px;
+      }
+}}}
 
   
         /* estilo padrão */
