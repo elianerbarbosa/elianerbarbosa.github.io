@@ -572,4 +572,7 @@ animation: sobeSecao .8s ease-in-out forwards;
   .my_resume,  .sobre_titulo p, .sobre_titulo h1 {
      max-width: 600px;
    }
+  main{
+         max-width: 600px;
+  }
 }
