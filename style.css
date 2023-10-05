@@ -598,6 +598,9 @@ animation: sobeSecao .8s ease-in-out forwards;
    .footer{
      max-width: 600px;
    }
+  .navegacao-primaria{
+   max-width: 600px;  
+  }
   .services .my_service .my_service li{
          max-width: 600px;
   }
