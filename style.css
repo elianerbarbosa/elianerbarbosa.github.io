@@ -48,7 +48,7 @@ body {
 
 @media screen and (max-width: 600px){
 
-   header .navegacao-primaria li a {
+}
 }
 header {
     background-color: blue;
@@ -98,7 +98,7 @@ header .navegacao-primaria li a:hover::after {
     padding: 0px;
     border-bottom: 4px solid aqua;
 }
-}
+
 /*dowload cv secao*/
 @media screen and (max-width: 768px){
   
@@ -109,8 +109,8 @@ header .navegacao-primaria li a:hover::after {
 
 @media screen and (max-width: 600px){
 
-   header .navegacao-primaria li a {
-   }
+}
+}
 
 
 .section-div {
@@ -163,7 +163,7 @@ header .navegacao-primaria li a:hover::after {
     opacity: 1;
     animation: blink .5s infinite;
 }
-}
+
 
 /* Sidebar Div--------------- */
 @media screen and (max-width: 768px){
@@ -176,6 +176,7 @@ header .navegacao-primaria li a:hover::after {
 @media screen and (max-width: 600px){
 
    }
+}
 
 div .menulateral {
     color: blue;
@@ -206,7 +207,7 @@ padding-top: 0px;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
   }
-}
+
 
 
 @keyframes blink {
@@ -239,6 +240,7 @@ transform: translate3d(0, 0, 0);
 
 @media screen and (max-width: 600px){
 
+}
 }
 
 main {
@@ -376,7 +378,7 @@ main .sobre{
     text-justify: center;
     text-align: center;
  }
-}
+
  @keyframes sobeSecao {
     from{
         transition: .5s;
