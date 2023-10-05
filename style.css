@@ -20,6 +20,14 @@
 }
 
 
+@media screen and (max-width: 768px){
+  
+
+@media screen and (max-width: 300px){
+  
+
+
+@media screen and (max-width: 600px){
 
 *{
     margin: 0;
@@ -29,6 +37,15 @@
     text-decoration: none;
 position: bottom;
 }
+}}}
+@media screen and (max-width: 768px){
+  
+
+@media screen and (max-width: 300px){
+  
+
+
+@media screen and (max-width: 600px){
 
 body {
     padding: 0;
@@ -37,7 +54,7 @@ body {
     position: center;
     
 }
-
+}}}
 /*header*/
 @media screen and (max-width: 768px){
   
