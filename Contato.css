@@ -15,7 +15,7 @@ text-justify: center;
 text-align: center;
 }
 
-.formulario {
+formulario {
     font-family: 'Poppins' sans-serif;
     font-size: 17px;
     background-color: blue;
@@ -29,7 +29,7 @@ h1 {
     text-shadow: 5px 5px 5px blue;
 }
 /*parte interna formulário*/
-.input, textarea {
+input, textarea {
     width: 50px;
     padding: 10px;
     color: white;
@@ -42,7 +42,7 @@ h1 {
 
 }
 
-.input:hover, textarea:hover, input:focus, textarea:focus {
+input:hover, textarea:hover, input:focus, textarea:focus {
     border-color: aqua;
     box-shadow: 5px 0px 9px rgb(114, 200, 205);
     background-color: #66FFFF;
@@ -51,7 +51,7 @@ h1 {
 
 }
 
-.enviar {
+enviar {
     background-color: aqua;
     height: 40px;
     width: 100px;
@@ -63,7 +63,7 @@ h1 {
     color: blue;
 }
 
-.textarea {
+textarea {
     width: 400px;
     height: 120px;
     line-height: 20px;
@@ -71,7 +71,7 @@ h1 {
 
 }
 
-.form label {
+form label {
     margin: 10px;
     color: aqua;
     font-weight: bold;
