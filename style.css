@@ -536,5 +536,11 @@ animation: sobeSecao .8s ease-in-out forwards;
     align-content: center;
     justify-content: space-around;
  }
-
+<style>
+ @import url(tiny.css) (min-width:300px);
+ @import url(small.css) (min-width:600px);
+ @import url(big.css) (min-width:900px);
+</style>
+@media screen and (max-width: 300px) {
+ /* estilos */
 
