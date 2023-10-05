@@ -575,7 +575,10 @@ animation: sobeSecao .8s ease-in-out forwards;
   main, main .sobre{
          max-width: 600px;
   }
-  .sobre_titulo{
+  .sobre_titulo .sobre_titulo h1 .sobre_titulo p  .sobre_titulo div {
     max-width: 600px;
+  }
+  html{
+   max-width: 600px;
   }
 }
