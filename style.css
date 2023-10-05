@@ -543,12 +543,26 @@ animation: sobeSecao .8s ease-in-out forwards;
     justify-content: space-around;
  }
 
- @media screen and (max-width: 768px) {
+@importar   url ( 'https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap' ){
+
+}
+@importar   URL ( 'https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap' ){
+
+}
+<estilo> _
+ @import  url (tiny.css) ( largura mínima : 300 px );
+ @import  url (small.css) ( largura mínima : 600 px );
+ @import  url (big.css) ( largura mínima : 900 px );
+< / estilo >
+@media screen e ( largura máxima :  300 px ) {
+ /* estilos */
+}
+@tela de mídia e ( largura máxima :  768 px ){
 }
 
-@media screen and (max-width: 600px) {
+@tela de mídia e ( largura máxima :  600 px ){
 
-   header .navegacao-primaria li a {
-       color: black;
+   cabeçalho . navegacao-primaria  li  a {
+       cor : preto;
    }
 }
