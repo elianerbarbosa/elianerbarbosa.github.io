@@ -420,7 +420,9 @@ animation: sobeSecao .8s ease-in-out forwards;
 
  /*sobre mim ----------------------- */
  /* My Service */
- @keyframes services {
+/*--------responsivo--------*/
+ @keyframes services, my_service {
+ 
     from{
         transition: .5s;
         transform: translate3d(60px, 0, 0);
@@ -430,7 +432,8 @@ animation: sobeSecao .8s ease-in-out forwards;
     }
  }
 
- @keyframes services {
+ @keyframes services, my_service {
+
     from{
         transition: .5s;
         transform: translate3d(60px, 0, 0);
@@ -446,7 +449,7 @@ animation: sobeSecao .8s ease-in-out forwards;
     .section-div img {
         display: none;
     }}
-
+/*---------------------fim do responsivo----------*/
 .services {
     background-color: whitesmoke;
     margin-top: -30px;
