@@ -8,6 +8,9 @@
 @media screen and (max-width: 768px){
   
 }
+@media screen and (max-width: 300px){
+  
+}
 
 @media screen and (max-width: 600px){
 
@@ -36,7 +39,17 @@ body {
 }
 
 /*header*/
+@media screen and (max-width: 768px){
+  
+}
+@media screen and (max-width: 300px){
+  
+}
 
+@media screen and (max-width: 600px){
+
+   header .navegacao-primaria li a {
+}
 header {
     background-color: blue;
     padding: 10px;
@@ -85,8 +98,7 @@ header .navegacao-primaria li a:hover::after {
     padding: 0px;
     border-bottom: 4px solid aqua;
 }
-
-
+}
 /*dowload cv secao*/
 
 .section-div {
