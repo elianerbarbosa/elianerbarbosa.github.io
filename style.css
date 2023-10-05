@@ -9,13 +9,13 @@
  @import url(small.css) (min-width:600px);
  @import url(big.css) (min-width:900px);
 </style>
+
 @media screen and (max-width: 300px) {
   
 }
 @media screen and (max-width: 768px){
   
 }
-
 
 @media screen and (max-width: 600px){
 
