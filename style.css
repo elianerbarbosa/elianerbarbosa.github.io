@@ -552,6 +552,21 @@ animation: sobeSecao .8s ease-in-out forwards;
  @import url(small.css) (min-width:600px);
  @import url(big.css) (min-width:900px);
 </style>
-@media screen and (max-width: 300px) {
- /* estilos */
+@media screen and (max-width: 768px){
+  
+}
+@media screen and (max-width: 300px){
+  
+}
 
+@media screen and (max-width: 600px){
+   .rodapé {
+     max-width: 600px;
+   }
+      div .redes-sociais{
+         max-width: 600px;
+   }
+   .footer{
+     max-width: 600px;
+   }
+}
