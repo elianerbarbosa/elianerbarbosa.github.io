@@ -13,13 +13,13 @@
 }
 
 @media screen and (max-width: 600px){
-  dody, header, main {
+  body, header, main {
     max-width: 600px;
   }
  .services {
    max-width: 600px;
  }
-   .navegacao-primaria {
+   header .navegacao-primaria {
      max-width: 600px;
        color: black;
    }
