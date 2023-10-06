@@ -155,7 +155,7 @@ div .menulateral {
   div a {
     font-size: 18px;
     color: #fff;
-align-items: normal;
+align-items: last baseline;
 padding-top: 10px;
 padding-between: 10px;
 
