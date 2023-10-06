@@ -19,7 +19,7 @@
  .services {
    max-width: 600px;
  }
-   header .navegacao-primaria li a {
+   header .navegacao-primaria li ul a {
      max-width: 600px;
        color: black;
    }
