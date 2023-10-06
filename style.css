@@ -31,8 +31,6 @@ position: bottom;
   
     header {
     }
-      .navegacao-primaria{
-}
 }
 
 @media screen and (max-width: 300px){
@@ -43,8 +41,6 @@ position: bottom;
  
     header {
     }
-      .navegacao-primaria
-}
   }
 body {
     padding: 0;
