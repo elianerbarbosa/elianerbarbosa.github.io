@@ -5,23 +5,6 @@
 
 }
 
-@media screen and (max-width: 768px){
-  
-}
-@media screen and (max-width: 300px){
-  
-}
-
-@media screen and (max-width: 600px){
-
- .services {
-   max-width: 600px;
- }
-   header .navegacao-primaria {
-     max-width: 600px;
-       color: black;
-   }
-}
 
 *{
     margin: 0;
