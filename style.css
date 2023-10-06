@@ -47,6 +47,7 @@ body {
     box-sizing: center;
     background-color: aqua;
     position: center;
+}
     @media screen and (max-width: 600px){
     }
   @media screen and (max-width: 768px){
