@@ -17,9 +17,9 @@ position: bottom;
 
 body {
     padding: 0;
-    box-sizing: center;
+    box-sizing: content-box;
     background-color: aqua;
-    position: relative;
+    position: absolute;
 }
 
 /*header*/
