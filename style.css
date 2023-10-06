@@ -19,7 +19,7 @@ body {
     padding: 0;
     box-sizing: center;
     background-color: aqua;
-    position: center;
+    position: relative;
 }
 
 /*header*/
