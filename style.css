@@ -148,6 +148,7 @@ div .menulateral {
     cursor: pointer;
     padding: 30px;
 
+
   }
 
   /* links */
@@ -155,7 +156,8 @@ div .menulateral {
     font-size: 18px;
     color: #fff;
 align-items: normal;
-padding-top: 0px;
+padding-top: 10px;
+padding-between: 10px;
 
   }
 
