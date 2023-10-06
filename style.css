@@ -34,9 +34,6 @@ position: bottom;
     }
       .navegacao-primaria{
 }
-.section-div{
-
-}
 }
 
 @media screen and (max-width: 300px){
@@ -49,9 +46,6 @@ position: bottom;
     header {
     }
       .navegacao-primaria
-}
-.section-div
-
 }
   }
 body {
