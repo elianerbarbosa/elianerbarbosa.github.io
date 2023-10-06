@@ -13,9 +13,7 @@
 }
 
 @media screen and (max-width: 600px){
-  body, header, main {
-    max-width: 600px;
-  }
+
  .services {
    max-width: 600px;
  }
