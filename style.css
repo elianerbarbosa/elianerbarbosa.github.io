@@ -78,7 +78,17 @@ header .navegacao-primaria li a {
     color: white;
     font-size: 1.3rem;   
 }
-
+        @media screen and (max-width: 768px){
+         }
+        
+        @media screen and (max-width: 600px){
+        
+            header .navegacao-primaria li a {
+                color: black;
+            }
+            
+    }
+        
 /* tracinho no menu */ /* modificar o red para transparente */
 header .navegacao-primaria li a::after {
     content: '';
