@@ -28,8 +28,7 @@
 position: bottom;
 }
 @media screen and (max-width: 768px){
-   body {
-  }
+  
     header {
     }
       .navegacao-primaria{
@@ -41,8 +40,7 @@ position: bottom;
 
 
 @media screen and (max-width: 600px){
-  body {
-  }
+ 
     header {
     }
       .navegacao-primaria
