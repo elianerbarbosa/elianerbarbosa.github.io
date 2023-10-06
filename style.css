@@ -29,7 +29,7 @@ position: bottom;
 }
 @media screen and (max-width: 768px){
   
-    header {
+    body {
     }
 }
 
@@ -39,7 +39,7 @@ position: bottom;
 
 @media screen and (max-width: 600px){
  
-    header {
+    body {
     }
   }
 body {
