@@ -27,21 +27,7 @@
     text-decoration: none;
 position: bottom;
 }
-@media screen and (max-width: 768px){
-  
-    body {
-    }
-}
 
-@media screen and (max-width: 300px){
-  {
-
-
-@media screen and (max-width: 600px){
- 
-    body {
-    }
-  }
 body {
     padding: 0;
     box-sizing: center;
