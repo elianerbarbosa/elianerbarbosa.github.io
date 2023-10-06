@@ -26,27 +26,29 @@
     list-style: none;
     text-decoration: none;
 position: bottom;
+}
 @media screen and (max-width: 768px){
-  
+}
 
 @media screen and (max-width: 300px){
-  
+  {
 
 
 @media screen and (max-width: 600px){
 }
-}}}
+
 body {
     padding: 0;
     box-sizing: center;
     background-color: aqua;
     position: center;
     @media screen and (max-width: 600px){
+    }
   @media screen and (max-width: 768px){
+  }
     @media screen and (max-width: 300px){
+    }
 
-}
-}}}
 /*header*/
 
 header {
