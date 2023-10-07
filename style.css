@@ -95,7 +95,7 @@ header .navegacao-primaria li a:hover::after {
 /*dowload cv secao*/
 
 .section-div {
-    animation: inicialize .7s forwards;
+    animation: inicialize .8s forwards;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-around;
@@ -116,17 +116,17 @@ header .navegacao-primaria li a:hover::after {
 .section-div div h2 {
     font-family: 'Poppins' sans-serif;
     font-weight: 600;
-    color: blue;
+    color: white;
 }
 .section-div div p{
     font-family: 'Poppins' sans-serif;
     font-weight: 200;
-    color: blue;
+    color: white;
 }
 
 .section-div div a {
     justify-self: start;
-    color: white;
+    color: blue;
     padding: 15px 40px;
     border-radius: 5px;
     border: 2px solid aqua;
@@ -142,7 +142,7 @@ header .navegacao-primaria li a:hover::after {
     content: '|';
     margin-left: 5px;
     opacity: 1;
-    animation: blink .7s infinite;
+    animation: blink .8s infinite;
 }
 
 /* Sidebar Div--------------- */
