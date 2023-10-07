@@ -11,8 +11,8 @@
     border: 2px solid aqua;
      }
            section .section-div h2 p {
-        text-emphasis-color: white ;  
-             border-radius: 5px;
+        border-block-start-color: aliceblue;
+        border-radius: 5px fill;
     border: 2px solid aqua;
             }
      .section-div div h2 {
