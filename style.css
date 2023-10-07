@@ -5,7 +5,15 @@
 
 }
 
-
+    @media screen and (max-width: 600px){
+     color: white; 
+     }
+            .section-div h2 p {
+             color: white;   
+            }
+           aria-label .digitando h2 p {
+           color: white;
+       }}
 *{
     margin: 0;
     padding: 0;
