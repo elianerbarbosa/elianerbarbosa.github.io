@@ -7,12 +7,18 @@
  @media screen and (max-width: 600px){
       .section-div div p{
      color: white; 
+        border-radius: 5px;
+    border: 2px solid aqua;
      }
            section .section-div h2 p {
-             color: white;   
+             color: white;  
+             border-radius: 5px;
+    border: 2px solid aqua;
             }
      .section-div div h2 {
            color: white;
+       border-radius: 5px;
+    border: 2px solid aqua;
        }}
 
 
