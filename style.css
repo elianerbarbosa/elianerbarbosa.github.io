@@ -126,7 +126,7 @@ header .navegacao-primaria li a:hover::after {
 
 .section-div div a {
     justify-self: start;
-    color: blue;
+    color: white;
     padding: 15px 40px;
     border-radius: 5px;
     border: 2px solid aqua;
@@ -142,7 +142,7 @@ header .navegacao-primaria li a:hover::after {
     content: '|';
     margin-left: 5px;
     opacity: 1;
-    animation: blink .5s infinite;
+    animation: blink .7s infinite;
 }
 
 /* Sidebar Div--------------- */
