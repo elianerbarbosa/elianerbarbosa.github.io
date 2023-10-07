@@ -6,10 +6,10 @@
 }
 
     @media screen and (max-width: 600px){
-        .section-div{
+       .section-div{
      color: white; 
      }
-            .section-div h2 p {
+           section .section-div h2 p {
              background: white;   
             }
         .digitando::after h2 p {
