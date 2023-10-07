@@ -9,11 +9,13 @@
      color: white; 
         border-radius: 5px;
     border: 2px solid aqua;
-      fill: aliceblue;
+     box-shadow: #EEF2F7;
+        text-shadow: #EEF2F7;
 
      }
            section .section-div h2 p {
-               fill: aliceblue;
+               box-shadow: #EEF2F7;
+        text-shadow: #EEF2F7;
         border-radius: 5px fill white;
     border: 2px solid aqua;
             }
@@ -21,6 +23,8 @@
            color: white;
        border-radius: 5px;
     border: 2px solid aqua;
+       box-shadow: #EEF2F7;
+        text-shadow: #EEF2F7;
        }}
 
 
@@ -139,6 +143,7 @@ header .navegacao-primaria li a:hover::after {
     padding: 15px 40px;
     border-radius: 5px;
     border: 2px solid aqua;
+ s
 }
 
 .section-div img {
