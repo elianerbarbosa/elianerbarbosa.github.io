@@ -9,9 +9,11 @@
      color: white; 
         border-radius: 5px;
     border: 2px solid aqua;
+      fill: aliceblue;
+
      }
            section .section-div h2 p {
-        border-block-start-color: aliceblue;
+               fill: aliceblue;
         border-radius: 5px fill white;
     border: 2px solid aqua;
             }
