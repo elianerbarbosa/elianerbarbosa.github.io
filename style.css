@@ -5,17 +5,7 @@
 
 }
 
-    @media screen and (max-width: 600px){
-      .section-div div p{
-     color: white; 
-     }
-           section .section-div h2 p {
-             color: white;   
-            }
-     .section-div div h2 {
-           color: white;
-       }}
-*{
+   *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -95,7 +85,7 @@ header .navegacao-primaria li a:hover::after {
 /*dowload cv secao*/
 
 .section-div {
-    animation: inicialize .8s forwards;
+    animation: inicialize 1.0s forwards;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-around;
