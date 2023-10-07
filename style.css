@@ -12,7 +12,7 @@
            section .section-div h2 p {
              background: white;   
             }
-        .digitando::after h2 p {
+        section  .digitando::after h2 p {
            color: white;
        }}
 *{
