@@ -4,6 +4,17 @@
 @importar  URL ( 'https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap' ){
 
 }
+ @media screen and (max-width: 600px){
+      .section-div div p{
+     color: white; 
+     }
+           section .section-div h2 p {
+             color: white;   
+            }
+     .section-div div h2 {
+           color: white;
+       }}
+
 
    *{
     margin: 0;
@@ -106,17 +117,17 @@ header .navegacao-primaria li a:hover::after {
 .section-div div h2 {
     font-family: 'Poppins' sans-serif;
     font-weight: 600;
-    color: white;
+    color: blue;
 }
 .section-div div p{
     font-family: 'Poppins' sans-serif;
     font-weight: 200;
-    color: white;
+    color: blue;
 }
 
 .section-div div a {
     justify-self: start;
-    color: blue;
+    color: blue bold;
     padding: 15px 40px;
     border-radius: 5px;
     border: 2px solid aqua;
