@@ -6,6 +6,7 @@
 }
 
     @media screen and (max-width: 600px){
+        .section-div{
      color: white; 
      }
             .section-div h2 p {
