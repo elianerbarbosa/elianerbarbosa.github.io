@@ -7,15 +7,15 @@
  @media screen and (max-width: 600px){
       .section-div div p {
      border-radius: 5px;
-    border: 2px solid aqua;
         text-shadow: #EEF2F7;
      }
            section .section-div h2 p {
                box-shadow: #EEF2F7;
         text-shadow: #EEF2F7;
-        border-radius: 5px fill white;
-    border: 2px solid aqua;
-            }
+        border-radius: 5px ;
+fill-text: white;
+           text-fill: white ;
+           }
      .section-div div h2 {
            color: white;
        border-radius: 5px;
