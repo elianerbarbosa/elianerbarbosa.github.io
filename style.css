@@ -6,19 +6,12 @@
 }
  @media screen and (max-width: 600px){
       .section-div div p {
-        text-shadow: #EEF2F7;
-     }
+             }
            section .section-div h2 p {
-               box-shadow: #EEF2F7;
-        text-shadow: #EEF2F7;
-fill-text: white;
-           text-fill: white ;
            }
      .section-div div h2 {
-           color: white;
-       box-shadow: #EEF2F7;
-        text-shadow: #EEF2F7;
-       }}
+           color: blue;
+}}
 
 
    *{
@@ -108,7 +101,7 @@ header .navegacao-primaria li a:hover::after {
     align-items: center;
     gap: 90px;
     padding: 90px;
-    background-color: black;
+    background-color: whtesmoke;
 
 }
 
@@ -132,11 +125,10 @@ header .navegacao-primaria li a:hover::after {
 
 .section-div div a {
     justify-self: start;
-    color: blue bold;
+    color: blue ;
     padding: 15px 40px;
     border-radius: 5px;
     border: 2px solid aqua;
- s
 }
 
 .section-div img {
@@ -174,6 +166,7 @@ div .menulateral {
 align-items: last baseline;
 padding-top: 10px;
 padding-between: 10px;
+   text-align: justify;
 
   }
 
