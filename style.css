@@ -117,7 +117,7 @@ header .navegacao-primaria li a:hover::after {
     font-weight: 600;
     color: blue;
 }
-.section-div div p{
+.section-div div h1{
     font-family: 'Poppins' sans-serif;
     font-weight: 200;
     color: aqua;
