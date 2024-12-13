@@ -125,7 +125,7 @@ header .navegacao-primaria li a:hover::after {
 
 .section-div div a {
     justify-self: start;
-    color: blue ;
+    color: aqua ;
     padding: 15px 40px;
     border-radius: 5px;
     border: 2px solid aqua;
