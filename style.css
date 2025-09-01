@@ -173,7 +173,7 @@ padding-between: 10px;
   /* menu lateral */
   div  a:hover {
     color: blue;
-    background: aqua;
+    background: black;
     background-color: aqua;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
@@ -613,5 +613,6 @@ animation: sobeSecao .8s ease-in-out forwards;
    max-width: 600px;
   }
 }
+
 
 
