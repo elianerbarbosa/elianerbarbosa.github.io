@@ -299,7 +299,7 @@ main .sobre{
 
  /*traço*/
  .sobre_texto h1::after {
-    background-color: aqua;
+    background-color: black;
     height: 6px;
     width: 60px;
     margin: 20px 0;
@@ -613,4 +613,5 @@ animation: sobeSecao .8s ease-in-out forwards;
    max-width: 600px;
   }
 }
+
 
