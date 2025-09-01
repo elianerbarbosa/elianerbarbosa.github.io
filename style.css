@@ -227,7 +227,7 @@ main .sobre{
 }
  .sobre_titulo h1{
     font-size: 2.5rem;
-    color: aqua;
+    color: black;
     margin-bottom: 15px;
     font-family: 'Berkshire Swash', cursive;
  }
@@ -613,3 +613,4 @@ animation: sobeSecao .8s ease-in-out forwards;
    max-width: 600px;
   }
 }
+
