@@ -501,11 +501,11 @@ header span {
     margin-bottom: 40px;
     line-height: 1.6;
     color: var(--ciano-muito-claro);
-    text-shadow: 2px 2px 4px rgba(128, 222, 234, 0.5);
+    text-shadow: 2px 2px 4px rgba(128, 222, 234, 255);
     position: relative;
     padding: 20px;
     border-radius: 10px;
-    background: rgba(128, 0, 0, 0.2);
+    background: rgba(128, 0, 0, 222);
     backdrop-filter: blur(5px);
 }
 
@@ -1182,6 +1182,7 @@ header span {
         line-height: 1.7;
     }
 }
+
 
 
 
