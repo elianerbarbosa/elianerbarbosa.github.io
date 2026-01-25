@@ -20,6 +20,160 @@ function ativaLetra(elemento) {
     digitar();
 }
 
+// ===== CONTROLE DE MÚSICA =====
+function initAudioPlayer() {
+    const audio = document.getElementById('motivacao-audio');
+    const toggleBtn = document.getElementById('toggle-audio');
+    const volumeSlider = document.getElementById('volume-slider');
+    const volumePercent = document.getElementById('volume-percent');
+    const audioControls = document.querySelector('.audio-controls');
+    
+    if (!audio) return;
+    
+    // Configurar volume inicial
+    audio.volume = 0.5;
+    volumeSlider.value = 50;
+    volumePercent.textContent = '50%';
+    
+    // Iniciar a partir dos 42 segundos
+    audio.currentTime = 42;
+    
+    // Controlador de play/pause
+    toggleBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            this.innerHTML = '<i class="fas fa-volume-up"></i>';
+            this.classList.remove('muted');
+            audioControls.classList.remove('hidden');
+        } else {
+            audio.pause();
+            this.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            this.classList.add('muted');
+        }
+    });
+    
+    // Controle de volume
+    volumeSlider.addEventListener('input', function() {
+        const volume = this.value / 100;
+        audio.volume = volume;
+        volumePercent.textContent = `${this.value}%`;
+        
+        // Atualizar ícone baseado no volume
+        if (volume === 0) {
+            toggleBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            toggleBtn.classList.add('muted');
+        } else {
+            toggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            toggleBtn.classList.remove('muted');
+        }
+    });
+    
+    // Ocultar controles após 5 segundos de inatividade
+    let hideTimeout;
+    function resetHideTimeout() {
+        clearTimeout(hideTimeout);
+        audioControls.classList.remove('hidden');
+        hideTimeout = setTimeout(() => {
+            audioControls.classList.add('hidden');
+        }, 5000);
+    }
+    
+    // Mostrar controles ao interagir
+    audioControls.addEventListener('mouseenter', () => {
+        clearTimeout(hideTimeout);
+        audioControls.classList.remove('hidden');
+    });
+    
+    audioControls.addEventListener('mouseleave', resetHideTimeout);
+    
+    // Resetar timer ao interagir com controles
+    audioControls.querySelectorAll('button, input').forEach(element => {
+        element.addEventListener('mouseenter', resetHideTimeout);
+    });
+    
+    // Reproduzir música quando a seção de motivação for visível
+    const motivacaoSection = document.getElementById('motivacao');
+    let isPlaying = false;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !isPlaying) {
+                // Iniciar música com fade in
+                audio.currentTime = 42;
+                audio.volume = 0;
+                audio.play();
+                isPlaying = true;
+                
+                // Fade in suave
+                const fadeInInterval = setInterval(() => {
+                    if (audio.volume < 0.5) {
+                        audio.volume += 0.05;
+                    } else {
+                        clearInterval(fadeInInterval);
+                    }
+                }, 100);
+                
+                // Mostrar controles
+                audioControls.classList.remove('hidden');
+                resetHideTimeout();
+                
+                // Adicionar efeito visual à seção
+                entry.target.classList.add('active');
+                
+                // Adicionar classe de animação aos textos
+                const motivacaoTexts = entry.target.querySelectorAll('.motivacao-text');
+                motivacaoTexts.forEach((text, index) => {
+                    setTimeout(() => {
+                        text.style.animation = `fadeInUp 0.8s ease ${index * 0.2}s forwards`;
+                        text.style.opacity = '0';
+                    }, 100);
+                });
+            } else if (!entry.isIntersecting && isPlaying) {
+                // Fade out quando sair da seção
+                const fadeOutInterval = setInterval(() => {
+                    if (audio.volume > 0.1) {
+                        audio.volume -= 0.05;
+                    } else {
+                        clearInterval(fadeOutInterval);
+                        audio.pause();
+                        isPlaying = false;
+                        
+                        // Ocultar controles
+                        setTimeout(() => {
+                            audioControls.classList.add('hidden');
+                        }, 1000);
+                    }
+                }, 100);
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    if (motivacaoSection) {
+        observer.observe(motivacaoSection);
+    }
+    
+    // Pausar música ao sair da página
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden && !audio.paused) {
+            audio.pause();
+        }
+    });
+    
+    // Tecla de espaço para play/pause
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Space' && !e.target.matches('input, textarea, button')) {
+            e.preventDefault();
+            toggleBtn.click();
+        }
+    });
+    
+    // Inicializar hide timeout
+    resetHideTimeout();
+}
+
 // ===== MENU MOBILE =====
 function initMenuMobile() {
     const menuToggle = document.querySelector('.menu-toggle');
@@ -309,22 +463,6 @@ function initScrollAnimation() {
     });
 }
 
-// Adicionar estilos CSS para animação
-document.addEventListener('DOMContentLoaded', () => {
-    const style = document.createElement('style');
-    style.textContent = `
-        .animate {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-        
-        .digitacao-completa::after {
-            animation: blink 1s infinite;
-        }
-    `;
-    document.head.appendChild(style);
-});
-
 // ===== HIGHLIGHT MENU ATUAL =====
 function initMenuHighlight() {
     const sections = document.querySelectorAll('section[id]');
@@ -361,6 +499,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Inicializar todas as funcionalidades
+    initAudioPlayer();
     initMenuMobile();
     initCarrossel();
     initForm();
@@ -376,9 +515,44 @@ document.addEventListener('DOMContentLoaded', function() {
             background-color: rgba(255, 255, 255, 0.15) !important;
             font-weight: 600;
         }
+        
+        .motivacao-section.active .motivacao-text {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .motivacao-section.active .musica-info {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        
+        .digitacao-completa::after {
+            animation: blink 1s infinite;
+        }
     `;
     document.head.appendChild(style);
     
     // Log de inicialização
     console.log('Portfólio Eliane Barbosa inicializado com sucesso!');
+    
+    // Preload da música
+    const audio = document.getElementById('motivacao-audio');
+    if (audio) {
+        audio.load();
+    }
 });
+
+// Prevenir scroll quando os controles de música estão visíveis
+document.addEventListener('wheel', (e) => {
+    const audioControls = document.querySelector('.audio-controls');
+    if (audioControls && !audioControls.classList.contains('hidden')) {
+        const rect = audioControls.getBoundingClientRect();
+        if (e.clientX >= rect.left && e.clientX <= rect.right &&
+            e.clientY >= rect.top && e.clientY <= rect.bottom) {
+            e.preventDefault();
+        }
+    }
+}, { passive: false });
