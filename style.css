@@ -481,7 +481,7 @@ header span {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(128, 222, 234, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(128, 222, 234, 0.1) 0%, transparent 40%);
     pointer-events: none;
 }
 
@@ -1179,5 +1179,6 @@ header span {
         line-height: 1.7;
     }
 }
+
 
 
