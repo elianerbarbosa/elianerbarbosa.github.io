@@ -334,7 +334,7 @@ header span {
 }
 
 .servico-card p {
-    color: var(--cinza-escuro);
+    color: var(--azul-muito-claro: #5c6bc0);
     line-height: 1.7;
 }
 
@@ -896,3 +896,4 @@ header span {
         line-height: 1.7;
     }
 }
+
