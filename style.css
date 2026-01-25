@@ -464,11 +464,11 @@ header span {
 /* ===== SEÇÃO MOTIVAÇÃO ===== */
 .motivacao-section {
     padding: 100px 0;
-    background: linear-gradient(rgba(26, 35, 126, 0.95), rgba(26, 35, 126, 0.95)), 
+    background: linear-gradient(rgba(26, 35, 126, 0.50), rgba(26, 35, 126, 0.50)), 
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><path d="M0,50 Q250,0 500,50 T1000,50 V100 H0 Z" fill="%2300bcd4"/></svg>');
     background-size: cover;
     background-position: center;
-    color: var(--cinza-muito-claro);
+    color: var(--branco);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1179,4 +1179,5 @@ header span {
         line-height: 1.7;
     }
 }
+
 
