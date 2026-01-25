@@ -491,6 +491,9 @@ header span {
     position: relative;
     z-index: 2;
 }
+/* ===== SEÇÃO alterado para text-shadow: rgba(128, 222, 234, 0.5) ; antes: rgba(0, 0, 0, 0.5)  ===== */
+/* ===== SEÇÃO alterado para ⬇️background: rgba(128, 0, 0, 0.2); ; antes:background: rgba(0, 0, 0, 0.2);  ===== */
+
 
 .motivacao-text {
     font-size: 28px;
@@ -1179,6 +1182,7 @@ header span {
         line-height: 1.7;
     }
 }
+
 
 
 
