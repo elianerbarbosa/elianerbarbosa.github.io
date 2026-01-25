@@ -464,7 +464,7 @@ header span {
 /* ===== SEÇÃO MOTIVAÇÃO ===== */
 .motivacao-section {
     padding: 100px 0;
-    background: linear-gradient(rgba(26, 35, 126, 0.50), rgba(26, 35, 126, 0.50)), 
+    background: linear-gradient(rgba(26, 35, 126, 0.95), rgba(26, 35, 126, 0.95)), 
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><path d="M0,50 Q250,0 500,50 T1000,50 V100 H0 Z" fill="%2300bcd4"/></svg>');
     background-size: cover;
     background-position: center;
@@ -481,7 +481,7 @@ header span {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(128, 222, 234, 0.1) 0%, transparent 40%);
+    background: radial-gradient(circle at 50% 50%, rgba(128, 222, 234, 0.1) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -498,11 +498,11 @@ header span {
     margin-bottom: 40px;
     line-height: 1.6;
     color: var(--ciano-muito-claro);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(128, 222, 234, 0.5);
     position: relative;
     padding: 20px;
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(128, 0, 0, 0.2);
     backdrop-filter: blur(5px);
 }
 
@@ -1179,6 +1179,7 @@ header span {
         line-height: 1.7;
     }
 }
+
 
 
 
