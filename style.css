@@ -468,7 +468,7 @@ header span {
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><path d="M0,50 Q250,0 500,50 T1000,50 V100 H0 Z" fill="%2300bcd4"/></svg>');
     background-size: cover;
     background-position: center;
-    color: var(--branco);
+    color: var(--cinza-muito-claro);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1179,3 +1179,4 @@ header span {
         line-height: 1.7;
     }
 }
+
