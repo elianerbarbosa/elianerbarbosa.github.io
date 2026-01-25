@@ -17,6 +17,24 @@
 </head>
 
 <body>
+    <!-- Controle de Áudio -->
+    <audio id="motivacao-audio" preload="metadata">
+        <source src="Hall of Fame.mp3" type="audio/mpeg">
+        <source src="Hall da Fama.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    
+    <!-- Controle de volume flutuante -->
+    <div class="audio-controls">
+        <button id="toggle-audio" class="audio-btn" title="Controle de música">
+            <i class="fas fa-volume-up"></i>
+        </button>
+        <div class="volume-slider-container">
+            <input type="range" id="volume-slider" min="0" max="100" value="50" class="volume-slider">
+            <span id="volume-percent">50%</span>
+        </div>
+    </div>
+
     <!-- Header e Navegação -->
     <header>
         <div class="container header-container">
@@ -68,7 +86,7 @@
         <div class="container">
             <div class="section-title">
                 <h1>Sobre Mim</h1>
-                <p>Profissional - Perfil pessoal</p>
+                <p class="subtitulo-claro">Profissional - Perfil pessoal</p>
                 <div class="title-dots">
                     <span></span>
                     <span></span>
@@ -206,9 +224,23 @@
     <section id="motivacao" class="motivacao-section">
         <div class="container">
             <div class="section-title">
-                <h1>O Que Me Motiva</h1>
-                <p class="motivacao-text">"Se o plano não funciona, mude o plano, não a meta."</p>
-                <p class="motivacao-text">"Você é mais valente do que acredita, mais forte do que parece e está mais preparado do que imagina."</p>
+                <h1 class="titulo-claro">O Que Me Motiva</h1>
+                <div class="motivacao-content">
+                    <p class="motivacao-text">
+                        <i class="fas fa-quote-left"></i>
+                        Se o plano não funciona, mude o plano, não a meta.
+                        <i class="fas fa-quote-right"></i>
+                    </p>
+                    <p class="motivacao-text">
+                        <i class="fas fa-quote-left"></i>
+                        Você é mais valente do que acredita, mais forte do que parece e está mais preparado do que imagina.
+                        <i class="fas fa-quote-right"></i>
+                    </p>
+                    <div class="musica-info">
+                        <i class="fas fa-music"></i>
+                        <span>Hall of Fame - The Script ft. will.i.am</span>
+                    </div>
+                </div>
                 <div class="title-dots">
                     <span></span>
                     <span></span>
@@ -262,7 +294,7 @@
                     </div>
                     <h3>ODS 8</h3>
                     <p>Site sobre Objetivos de Desenvolvimento Sustentável</p>
-                </a>
+                </div>
             </div>
             
             <div class="carrossel-container">
