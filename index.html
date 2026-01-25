@@ -4,436 +4,209 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Eliane Barbosa</title>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    <!-- Estilos -->
+    <title>Monte seu Hambúrguer - Hamburgueria Delicious</title>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Scripts -->
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="carrossel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
-    <!-- Controle de Áudio -->
-    <audio id="motivacao-audio" preload="metadata">
-        <source src="Hall of Fame.mp3" type="audio/mpeg">
-        <source src="Hall da Fama.mp3" type="audio/mpeg">
-        Seu navegador não suporta o elemento de áudio.
-    </audio>
-    
-    <!-- Controle de volume flutuante -->
-    <div class="audio-controls">
-        <button id="toggle-audio" class="audio-btn" title="Controle de música">
-            <i class="fas fa-volume-up"></i>
-        </button>
-        <div class="volume-slider-container">
-            <input type="range" id="volume-slider" min="0" max="100" value="50" class="volume-slider">
-            <span id="volume-percent">50%</span>
+    <header>
+        <nav>
+            <div class="menuhorizontal">
+                <ul>
+                    <li><a href="index.html">Voltar ao Cardápio</a></li>
+                    <li><a href="#montar">Montar Hambúrguer</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-carrossel">
+        <h1 class="main-heading">Monte seu Hambúrguer Perfeito!</h1>
+        
+        <div class="carrossel-container">
+            <div class="carrossel-wrapper">
+                <div class="carrossel">
+                    <!-- Slides -->
+                    <div class="carrossel-slide active">
+                        <img src="./img/h17.png" alt="Hambúrguer 17" class="carrossel-img">
+                    </div>
+                    <div class="carrossel-slide">
+                        <img src="./img/h15.png" alt="Hambúrguer 15" class="carrossel-img">
+                    </div>
+                    <div class="carrossel-slide">
+                        <img src="./img/h14.png" alt="Hambúrguer 14" class="carrossel-img">
+                    </div>
+                    <div class="carrossel-slide">
+                        <img src="./img/h12.png" alt="Hambúrguer 12" class="carrossel-img">
+                    </div>
+                    <div class="carrossel-slide">
+                        <img src="./img/h11.png" alt="Hambúrguer 11" class="carrossel-img">
+                    </div>
+                    <div class="carrossel-slide">
+                        <img src="./img/bebida01.png" alt="Bebida 01" class="carrossel-img">
+                    </div>
+                    <div class="carrossel-slide">
+                        <img src="./img/bebida02.png" alt="Bebida 02" class="carrossel-img">
+                    </div>
+                    <div class="carrossel-slide">
+                        <img src="./img/bebida03.png" alt="Bebida 03" class="carrossel-img">
+                    </div>
+                    <div class="carrossel-slide">
+                        <img src="./img/batata01.png" alt="Batata 01" class="carrossel-img">
+                    </div>
+                    <div class="carrossel-slide">
+                        <img src="./img/batata02.png" alt="Batata 02" class="carrossel-img">
+                    </div>
+                </div>
+                
+                <!-- Botões de navegação -->
+                <button class="carrossel-btn prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carrossel-btn next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicadores -->
+                <div class="carrossel-indicators">
+                    <button class="carrossel-indicator active"></button>
+                    <button class="carrossel-indicator"></button>
+                    <button class="carrossel-indicator"></button>
+                    <button class="carrossel-indicator"></button>
+                    <button class="carrossel-indicator"></button>
+                    <button class="carrossel-indicator"></button>
+                    <button class="carrossel-indicator"></button>
+                    <button class="carrossel-indicator"></button>
+                    <button class="carrossel-indicator"></button>
+                    <button class="carrossel-indicator"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="montar-pedido" id="montar">
+            <h2>Monte seu Hambúrguer Personalizado</h2>
+            
+            <div class="resumo-pedido">
+                <h3>Seu Pedido:</h3>
+                <div id="resumo-conteudo">
+                    <p class="empty-resumo">Selecione as opções abaixo para montar seu pedido</p>
+                </div>
+                <div class="total">
+                    Total: <span id="total-preco">R$ 0,00</span>
+                </div>
+            </div>
+            
+            <form class="form-montar" id="form-pedido">
+                <div class="form-group">
+                    <label>Escolha o Pão:</label>
+                    <select id="pao" data-preco="5.00">
+                        <option value="" data-preco="0">Selecione o pão</option>
+                        <option value="australiano" data-preco="6.00">Pão Australiano</option>
+                        <option value="brioche" data-preco="5.00">Pão de Brioche</option>
+                        <option value="italiano" data-preco="5.50">Pão Italiano</option>
+                        <option value="gergelim" data-preco="4.50">Pão com Gergelim</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Escolha a Carne:</label>
+                    <select id="carne" data-preco="15.00">
+                        <option value="" data-preco="0">Selecione a carne</option>
+                        <option value="bovino" data-preco="18.00">Hambúrguer Bovino (180g)</option>
+                        <option value="frango" data-preco="16.00">Hambúrguer de Frango</option>
+                        <option value="suino" data-preco="17.00">Hambúrguer Suíno</option>
+                        <option value="vegano" data-preco="19.00">Hambúrguer Vegano</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Queijos (R$ 3,00 cada):</label>
+                    <div class="checkboxes">
+                        <label><input type="checkbox" name="queijo" value="cheddar" data-preco="3.00"> Cheddar</label>
+                        <label><input type="checkbox" name="queijo" value="mussarela" data-preco="3.00"> Mussarela</label>
+                        <label><input type="checkbox" name="queijo" value="prato" data-preco="3.00"> Prato</label>
+                        <label><input type="checkbox" name="queijo" value="cream" data-preco="4.00"> Cream Cheese</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Adicionais:</label>
+                    <div class="checkboxes">
+                        <label><input type="checkbox" name="adicional" value="bacon" data-preco="5.00"> Bacon (R$ 5,00)</label>
+                        <label><input type="checkbox" name="adicional" value="ovo" data-preco="3.50"> Ovo (R$ 3,50)</label>
+                        <label><input type="checkbox" name="adicional" value="cebola" data-preco="2.50"> Cebola Caramelizada (R$ 2,50)</label>
+                        <label><input type="checkbox" name="adicional" value="molho" data-preco="2.00"> Molho Especial (R$ 2,00)</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Saladas (incluídas):</label>
+                    <div class="checkboxes">
+                        <label><input type="checkbox" name="salada" value="alface" checked> Alface</label>
+                        <label><input type="checkbox" name="salada" value="tomate" checked> Tomate</label>
+                        <label><input type="checkbox" name="salada" value="cebola-roxa"> Cebola Roxa</label>
+                        <label><input type="checkbox" name="salada" value="picles"> Picles</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Bebida:</label>
+                    <select id="bebida" data-preco="0">
+                        <option value="" data-preco="0">Sem bebida</option>
+                        <option value="coca" data-preco="8.00">Coca-Cola 500ml (R$ 8,00)</option>
+                        <option value="guarana" data-preco="7.50">Guaraná Antarctica 500ml (R$ 7,50)</option>
+                        <option value="suco" data-preco="6.00">Suco Natural 300ml (R$ 6,00)</option>
+                        <option value="agua" data-preco="4.00">Água Mineral 500ml (R$ 4,00)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Acompanhamento:</label>
+                    <select id="acompanhamento" data-preco="0">
+                        <option value="" data-preco="0">Sem acompanhamento</option>
+                        <option value="batata-media" data-preco="12.00">Batata Frita Média (R$ 12,00)</option>
+                        <option value="batata-grande" data-preco="15.00">Batata Frita Grande (R$ 15,00)</option>
+                        <option value="onion" data-preco="14.00">Onion Rings (R$ 14,00)</option>
+                        <option value="salada" data-preco="10.00">Salada Caesar (R$ 10,00)</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-finalizar">Finalizar Pedido - <span id="preco-final">R$ 0,00</span></button>
+            </form>
         </div>
     </div>
 
-    <!-- Header e Navegação -->
-    <header>
-        <div class="container header-container">
-            <h1>Dev <span>Eliane Barbosa</span></h1>
-            <button class="menu-toggle" aria-label="Abrir menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav class="navegacao-primaria">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre Mim</a></li>
-                    <li><a href="#resumo">Resumo</a></li>
-                    <li><a href="#motivacao">Motivação</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="redes-sociais">
+        <ul class="rodape">
+            <li>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <a href="https://www.twitter.com/elianeli25"><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></a>
+                </span>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <a href="https://www.facebook.com/eliane.ramos.148"><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></a>
+                </span>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <a href="https://www.instagram.com/elianeli25"><i class="fa fa-instagram fa-stack-1x fa-inverse"></i></a>
+                </span>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <a href="https://www.linkedin.com/in/elianeramosbarbosa-erb"><i class="fa fa-linkedin fa-stack-1x fa-inverse"></i></a>
+                </span>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <a href="https://wa.me/5511997732399"><i class="fa fa-whatsapp fa-stack-1x fa-inverse"></i></a>
+                </span>
+            </li>
+        </ul>
+        <p>Copyright © 2023 Hamburgueria Delicious</p>
+    </div>
 
-    <!-- Seção Principal - HOME -->
-    <section id="home" class="hero-section">
-        <div class="container hero-container">
-            <div class="hero-text">
-                <h2>Olá, prazer. Eu sou...</h2>
-                <h2 class="digitando">Eliane Ramos Barbosa</h2>
-                <div class="hero-descricao">
-                    <p>Minha trajetória é movida pela busca constante por conhecimento e pela capacidade de transformar desafios em oportunidades. Como engenheira de produção, desenvolvi uma base sólida em análise de sistemas, eficiência e resolução de problemas complexos.</p>
-                    <p>Sou profundamente fascinada pela tecnologia e mantenho-me constantemente atualizada sobre inovações e tendências do setor. Foi essa mesma curiosidade que me levou ao universo financeiro, onde descobri uma paixão genuína pela interseção entre tecnologia e finanças.</p>
-                    <p>Estou pronta para contribuir em um ambiente dinâmico, onde possa agregar valor contínuo e crescer junto à organização.</p>
-                </div>
-                <div class="hero-buttons">
-                    <a href="https://drive.google.com/file/d/15ie-cuj6XNUy7ZwBz-AaUIdXs5-kIoeD/view?usp=sharing" class="btn btn-primary" target="_blank">
-                        <i class="fas fa-download"></i> Download Currículo
-                    </a>
-                    <a href="https://www.instagram.com/reel/C7FtdrqJ0lo/?igsh=cDVsNXR4c2JlMHRs" class="btn btn-secondary" target="_blank">
-                        <i class="fas fa-heart"></i> Para mim, Para você
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="./img/eliane.jpg" alt="Eliane Barbosa - Desenvolvedora">
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção SOBRE MIM -->
-    <section id="sobre" class="sobre-section">
-        <div class="container">
-            <div class="section-title">
-                <h1>Sobre Mim</h1>
-                <p class="subtitulo-claro">Profissional - Perfil pessoal</p>
-                <div class="title-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            
-            <div class="sobre-content">
-                <div class="sobre-image">
-                    <img src="./img/eliane.jpg" alt="Eliane Barbosa">
-                </div>
-                <div class="sobre-info">
-                    <h2>Eu sou Eliane Barbosa - Eliane Ramos</h2>
-                    <div class="sobre-text">
-                        <p>Sempre acreditei que os estudos fossem o caminho mais fácil para alcançar o sucesso. Através dos estudos tive a oportunidade de galgar conhecimentos incríveis. Com uma trajetória movida pela curiosidade intelectual e pela crença de que o aprendizado contínuo é a base para a excelência, construí uma carreira multifacetada e sólida na logística. A facilidade natural para aprender e a busca constante por desafios fora da zona de conforto me tornaram um profissional multiprofissional e polivalente, com mais de cinco anos de experiência em cargos estratégicos que vão desde a operação até a análise.</p>
-                        <p>Minha atuação abrangeu funções como Auxiliar de Logística, Almoxarife, Analista de Logística Jr., Assistente de Transportes e Analista Operacional (Transportes), desenvolvendo uma visão integral da cadeia. Atualmente, atuo como Assistente de Inteligência de Dados na área de logística, onde aplico minha capacidade autodidata para transformar informações em insights acionáveis, otimizando processos e apoiando a tomada de decisão.</p>
-                        <p>Paralelamente, por quatro anos, exerci a função de Líder de Equipe no setor comercial, fortalecendo habilidades interpessoais, gestão de pessoas e performance operacional, uma combinação que enriquece minha atuação na logística com uma perspectiva orientada a resultados e à eficiência. Fora do ambiente profissional, mantenho o corpo e a mente em movimento através de exercícios físicos e, sempre que possível, de viagens. Acredito que explorar novos lugares e culturas é uma extensão do meu desejo por crescimento: amplia horizontes, cultiva a empatia e oferece uma visão de mundo mais rica e adaptável, qualidades que traduzo em flexibilidade, resiliência e criatividade no trabalho. Estou pronto para agregar com versatilidade, espírito analítico e liderança, sempre em busca de novos desafios e oportunidades para evoluir.</p>
-                    </div>
-                    
-                    <div class="sobre-details">
-                        <div class="detail-item">
-                            <i class="fas fa-calendar-days"></i>
-                            <div>
-                                <h4>Aniversário</h4>
-                                <p>05 de março</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-laptop-code"></i>
-                            <div>
-                                <h4>Freelance</h4>
-                                <p>Disponível</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-location-dot"></i>
-                            <div>
-                                <h4>Endereço</h4>
-                                <p>São Paulo, Brasil</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-flag"></i>
-                            <div>
-                                <h4>Nacionalidade</h4>
-                                <p>Brasileira</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Telefone</h4>
-                                <p>+55 11 99773-2399</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>engproducao.eliane@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção RESUMO -->
-    <section id="resumo" class="resumo-section">
-        <div class="container">
-            <div class="section-title">
-                <h1>Resumo</h1>
-                <p>Perfil profissional - Tudo sobre mim</p>
-                <div class="title-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            
-            <div class="servicos-grid">
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <h3>Engenharia de Produção</h3>
-                    <p>Um dos primeiros motivos para cursar Engenharia de Produção diz respeito à abrangência da área. Pode desenvolver atividades em setores ou empresas de Logística, Gestão de Produto, Segurança do Trabalho, Gestão Econômica, Gestão Ambiental e diversas outras.</p>
-                </div>
-                
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-users-gear"></i>
-                    </div>
-                    <h3>MBA em Gestão de Pessoas</h3>
-                    <p>Gestão de pessoas não é controlar, mas sim, orientar. Gestão com pessoas está para além de fazê-las alcançar bons resultados. Trata-se, sobretudo, de auxiliá-las a reencontrar as razões que as fazem sorrir.</p>
-                </div>
-                
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-dolly"></i>
-                    </div>
-                    <h3>Técnica em Logística</h3>
-                    <p>A logística é o caminho mais curto entre dois pontos. A logística está presente em qualquer processo de desenvolvimento. Um fluxo eficiente que seja capaz de levar um produto até o seu comprador, garantindo que o processo de compra e venda seja concluído chama-se logística.</p>
-                </div>
-                
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Investimentos</h3>
-                    <p>A paz financeira não é a aquisição de coisas. É aprender a viver com menos do que você ganha. Não é quanto dinheiro você ganha, mas quanto dinheiro você "guarda".</p>
-                </div>
-                
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <h3>Academia</h3>
-                    <p>"Mente sã, corpo são". A prática regular de exercícios físicos envolve muito mais do que estética. Ela contribui para o bem-estar físico, saúde mental, bom funcionamento do coração, circulação sanguínea, da respiração e até mesmo dos hormônios.</p>
-                </div>
-                
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-plane-departure"></i>
-                    </div>
-                    <h3>Viajar</h3>
-                    <p>Poucas coisas na vida são melhores que viajar. Viajar é mais do que a visão de pontos turísticos, é a mudança que acontece, profunda e permanentemente, no conceito sobre o que é a vida. A cada nova viagem, voltamos para casa com novos brilhos no olhar.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção MOTIVAÇÃO -->
-    <section id="motivacao" class="motivacao-section">
-        <div class="container">
-            <div class="section-title">
-                <h1 class="titulo-claro">O Que Me Motiva</h1>
-                <div class="motivacao-content">
-                    <p class="motivacao-text">
-                        <i class="fas fa-quote-left"></i>
-                        Se o plano não funciona, mude o plano, não a meta.
-                        <i class="fas fa-quote-right"></i>
-                    </p>
-                    <p class="motivacao-text">
-                        <i class="fas fa-quote-left"></i>
-                        Você é mais valente do que acredita, mais forte do que parece e está mais preparado do que imagina.
-                        <i class="fas fa-quote-right"></i>
-                    </p>
-                    <div class="musica-info">
-                        <i class="fas fa-music"></i>
-                        <span>Hall of Fame - The Script ft. will.i.am</span>
-                    </div>
-                </div>
-                <div class="title-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção PROJETOS -->
-    <section id="projetos" class="projetos-section">
-        <div class="container">
-            <div class="section-title">
-                <h1>Meus Projetos</h1>
-                <p>Conheça alguns dos meus trabalhos</p>
-                <div class="title-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            
-            <div class="projetos-links">
-                <a href="https://elianerbarbosa.github.io/sobremim/" class="projeto-link" target="_blank">
-                    <div class="projeto-icon">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>Sobre Mim</h3>
-                    <p>Página pessoal com informações detalhadas</p>
-                </a>
-                
-                <a href="https://elianerbarbosa.github.io/planfinanceiro/" class="projeto-link" target="_blank">
-                    <div class="projeto-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>Planejamento Financeiro</h3>
-                    <p>Ferramenta para controle financeiro pessoal</p>
-                </a>
-                
-                <a href=" https://elinerbarbosa.github.io/cardapio/" class="projeto-link" target="_blank">
-                    <div class="projeto-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Cardápio</h3>
-                    <p>Cardápio digital para restaurantes</p>
-                </a>
-                
-                <a href="https://elianerbarbosa.github.io/ods8-site/" class="projeto-link" target="_blank">
-                    <div class="projeto-icon">
-                        <i class="fas fa-globe-americas"></i>
-                    </div>
-                    <h3>ODS 8</h3>
-                    <p>Site sobre Objetivos de Desenvolvimento Sustentável</p>
-                </div>
-            </div>
-            
-            <div class="carrossel-container">
-                <div class="carrossel">
-                    <div class="carrossel-slides">
-                        <div class="slide active">
-                            <img src="./img/Capturaplanfin.png" alt="Planejamento Financeiro">
-                            <div class="slide-caption">Planejamento Financeiro</div>
-                        </div>
-                        <div class="slide">
-                            <img src="./img/hampr.png" alt="Cardápio">
-                            <div class="slide-caption">Cardápio Digital</div>
-                        </div>
-                        <div class="slide">
-                            <img src="./img/Capturasobremim.png" alt="Sobre Mim">
-                            <div class="slide-caption">Sobre Mim</div>
-                        </div>
-                        <div class="slide">
-                            <img src="./img/Capturaods.png" alt="ODS 8">
-                            <div class="slide-caption">ODS 8</div>
-                        </div>
-                    </div>
-                    <button class="carrossel-prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carrossel-next">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <div class="carrossel-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção CONTATO -->
-    <section id="contato" class="contato-section">
-        <div class="container">
-            <div class="section-title">
-                <h1>Entre em Contato</h1>
-                <p>Vamos conversar sobre oportunidades</p>
-                <div class="title-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            
-            <form class="contato-form" action="https://formsubmit.co/elianeli25@hotmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Novo contato do portfólio - Eliane Barbosa">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="nome">Nome *</label>
-                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
-                </div>
-                
-                <div class="form-group">
-                    <label for="mensagem">Mensagem *</label>
-                    <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui..." rows="5" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary btn-enviar">
-                    <i class="fas fa-paper-plane"></i> Enviar Mensagem
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Como me encontrar</h3>
-                    <p>Estou sempre aberta a novas oportunidades e conexões!</p>
-                </div>
-                
-                <div class="redes-sociais">
-                    <a href="https://www.linkedin.com/in/elianeramosbarbosa-erb" class="social-link" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/elianerbarbosa" class="social-link" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.instagram.com/elianeli25" class="social-link" target="_blank" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://wa.me/5511997732399" class="social-link" target="_blank" title="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="mailto:engproducao.eliane@gmail.com" class="social-link" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-                
-                <div class="creditos">
-                    <h4>Créditos e Parceiros</h4>
-                    <div class="parceiros-logos">
-                        <a href="https://www.linkedin.com/in/julianaribeirof" target="_blank">
-                            <img src="./img/july.r.png" alt="Juliana Ribeiro">
-                        </a>
-                        <a href="https://www.jabrasil.org.br" target="_blank">
-                            <img src="./img/jjabasil.png" alt="JA Brasil">
-                        </a>
-                        <a href="https://www.grupoccr.com.br/instituto-ccr/projeto-elas-na-tech" target="_blank">
-                            <img src="./img/elantecc.png" alt="Elas na Tech">
-                        </a>
-                        <a href="https://www.w3schools.com" target="_blank">
-                            <img src="./img/w3sc.png" alt="W3Schools">
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="copyright">
-                    <p>&copy; 2023 Desenvolvido por Eliane R. Barbosa. Todos os direitos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <script src="carrossel.js"></script>
+    <script src="pedido.js"></script>
 </body>
 </html>
-
-
-
