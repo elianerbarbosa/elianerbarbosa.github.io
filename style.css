@@ -501,7 +501,7 @@ header span {
     margin-bottom: 40px;
     line-height: 1.6;
     color: var(--ciano-muito-claro);
-    text-shadow: 2px 2px 4px rgba(0, 122, 334, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 22, 134, 0.5);
     position: relative;
     padding: 20px;
     border-radius: 10px;
@@ -1182,6 +1182,7 @@ header span {
         line-height: 1.7;
     }
 }
+
 
 
 
