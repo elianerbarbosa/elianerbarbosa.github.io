@@ -341,7 +341,7 @@ header span {
 /* ===== SEÇÃO MOTIVAÇÃO ===== */
 .motivacao-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--ciano-claro) 100%);
+    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-claro) 100%);
     color: var(--branco);
     text-align: center;
 }
@@ -896,6 +896,7 @@ header span {
         line-height: 1.7;
     }
 }
+
 
 
 
