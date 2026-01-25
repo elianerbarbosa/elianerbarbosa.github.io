@@ -1,246 +1,416 @@
-@media screen and (max-width: 768px){
-}
-
-@media screen and (max-width: 600px){
-    body{
-       max-width: 600px;
-    }
-  .container {
-max-width: 600px;
-  }
-      .main-heading{
-         max-width: 600px;
-}
-      .content{
-         max-width: 600px;
-      }
-      .slideshow{
-         max-width: 600px;
-      }
-}}}
-
-  
-        /* estilo padrão */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-  
-        /* fundo */
-        body {
-            background-color: aqua;
-        }
-  
-        /* Container: pagina centralizado, argura e altura */
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: auto;
-            width: 800px;
-            height: 600px;
-        }
-  
-        /* preenchimento cabeçalho */
-        .main-heading {
-            padding: 2rem 0 2rem 0;
-        }
-  
-        .content {
-            position: relative;
-        }
-  
-        
-        /* colocar contéudo do centro do carrossel */
-        .carousel-content {
-            position: absolute;
-  
-            /* centralizar horizontalmente e verticalmente */
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 50;
-        }
-  
-        .carousel-heading {
-            font-size: 3rem;
-            color: white;
-            margin-bottom: 1rem;
-        }
-  
-        /* Fim do estilo carrossel */
-  
-        /* apresentação slide */
-        .slideshow {
-            height: 100%;
-            overflow: hidden;
-  
-            /* ocultar slide na sireção x */
-            position: relative;
-        }
-  
-        /* estilo de imagem */
-        .slideshow-wrapper {
-            display: flex;
-  
-            /* largura proporcional se 4 imagens largura 400% se 5 imagens largura de 500%. */
-            width: 400%;
-            height: 100%;
-            position: relative;
-  
-            /* animação */
-            animation: slideshow 20s infinite;
-        }
-  
-        /* largura e altura de imagens */
-        .slide {
-            width: 100%;
-            height: 100%;
-        }
-  
-        .slide-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-  
-        /* @keyframes aanimação com configurações 4 imagens. */
-        @keyframes slideshow {
-            0% {
-                left: 0;
-            }
-  
-            10% {
-                left: 0;
-            }
-  
-            15% {
-                left: -100%;
-            }
-  
-            25% {
-                left: -100%;
-            }
-  
-            30% {
-                left: -200%;
-            }
-  
-            40% {
-                left: -200%;
-            }
-  
-            45% {
-                left: -300%;
-            }
-  
-            55% {
-                left: -300%;
-            }
-  
-            60% {
-                left: -200%;
-            }
-  
-            70% {
-                left: -200%;
-            }
-  
-            75% {
-                left: -100%;
-            }
-  
-            85% {
-                left: -100%;
-            }
-  
-            90% {
-                left: 0%;
-            }
-        }
-  
-        /* fim da configuração slide */
-  
-        /* botão de controle do carrossel */
-        .slide-btn {
-            background-color: whitesmoke;
-            border-radius: 50%;
-            border: .2rem solid blue;
-            width: 1.2rem;
-            height: 1.2rem;
-            outline: none;
-            cursor: pointer;
-  
-            /* botão parte inferior */
-            position: absolute;
-            bottom: 3%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 70;
-        }
-  
-        /* colocando botão na posição correta */
-        .slide-btn-1 {
-            left: 45%;
-        }
-  
-        .slide-btn-2 {
-            left: 50%;
-        }
-  
-        .slide-btn-3 {
-            left: 55%;
-        }
-  
-        .slide-btn-4 {
-            left: 60%;
-        }
-  
-        /* botão para a imagem associada a ele. */
-        .slide-btn-1:focus~.slideshow-wrapper {
-            animation: none;
-            left: 0;
-        }
-  
-        .slide-btn-2:focus~.slideshow-wrapper {
-            animation: none;
-            left: -100%;
-        }
-  
-        .slide-btn-3:focus~.slideshow-wrapper {
-            animation: none;
-            left: -200%;
-        }
-  
-        .slide-btn-4:focus~.slideshow-wrapper {
-            animation: none;
-            left: -300%;
-        }
-  
-        /* cor de fnd qnd mudar slide */
-        .slide-btn:focus {
-            background-color: #308d46;
-        }
-  
-    
-
-
-body {
+/* Container do carrossel */
+.container-carrossel {
+    max-width: 1200px;
+    margin: 80px auto 50px;
+    padding: 0 20px;
     text-align: center;
 }
 
-        @media screen and (max-width: 768px){
-         }
-        
-        @media screen and (max-width: 600px){
-        
-            header .navegacao-primaria li a {
-                color: black;
-            }
+.container-carrossel .main-heading {
+    font-size: 2.8rem;
+    color: white;
+    margin-bottom: 40px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    position: relative;
+    display: inline-block;
+}
+
+.container-carrossel .main-heading::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(to right, orange, #e55324);
+    margin: 15px auto 0;
+    border-radius: 3px;
+}
+
+.carrossel-container {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+/* Wrapper do carrossel */
+.carrossel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #333 0%, #222 100%);
+}
+
+.carrossel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carrossel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrossel-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.carrossel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Botões de navegação */
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 165, 0, 0.8);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.carrossel-btn:hover {
+    background: rgba(255, 140, 0, 0.9);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.carrossel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+/* Indicadores (Dots) */
+.carrossel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 0 0 20px 20px;
+}
+
+.carrossel-indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carrossel-indicator:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(1.2);
+}
+
+.carrossel-indicator.active {
+    background: orange;
+    border-color: white;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+}
+
+/* Área para montar pedido */
+.montar-pedido {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.montar-pedido h2 {
+    text-align: center;
+    color: #e55324;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.montar-pedido h2::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 5px;
+    background: linear-gradient(to right, orange, #e55324);
+    margin: 15px auto 0;
+    border-radius: 3px;
+}
+
+/* Resumo do pedido */
+.resumo-pedido {
+    background: linear-gradient(135deg, #fff8e1 0%, #fff 100%);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    border: 2px dashed orange;
+}
+
+.resumo-pedido h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#resumo-conteudo {
+    min-height: 120px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+}
+
+#resumo-conteudo p {
+    margin-bottom: 8px;
+    color: #555;
+    line-height: 1.5;
+}
+
+#resumo-conteudo p.empty-resumo {
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.total {
+    text-align: right;
+    font-size: 1.4rem;
+    color: #e55324;
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+    font-weight: 800;
+}
+
+/* Formulário de montagem */
+.form-montar {
+    margin-top: 30px;
+}
+
+.form-montar .form-group {
+    margin-bottom: 25px;
+}
+
+.form-montar label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+.form-montar select {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 20px;
+}
+
+.form-montar select:focus {
+    border-color: orange;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 165, 0, 0.15);
+}
+
+.form-montar .checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.form-montar .checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    margin: 0;
+}
+
+.form-montar .checkboxes label:hover {
+    background: #fff8e1;
+    border-color: #ffd699;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-montar .checkboxes input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: orange;
+    transition: transform 0.2s;
+}
+
+.form-montar .checkboxes input[type="checkbox"]:hover {
+    transform: scale(1.1);
+}
+
+/* Botão Finalizar */
+.btn-finalizar {
+    width: 100%;
+    background: linear-gradient(45deg, orange, #ff8c00);
+    color: white;
+    border: none;
+    padding: 18px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(255, 165, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 20px;
+}
+
+.btn-finalizar:hover {
+    background: linear-gradient(45deg, #ff8c00, #e55324);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(255, 165, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+.btn-finalizar:active {
+    transform: translateY(-2px);
+}
+
+/* Responsividade do carrossel */
+@media screen and (max-width: 992px) {
+    .carrossel-wrapper {
+        height: 400px;
     }
-        
+    
+    .container-carrossel .main-heading {
+        font-size: 2.3rem;
+    }
+    
+    .montar-pedido {
+        padding: 30px 20px;
+    }
+}
 
+@media screen and (max-width: 768px) {
+    .carrossel-wrapper {
+        height: 350px;
+    }
+    
+    .carrossel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    .prev-btn {
+        left: 10px;
+    }
+    
+    .next-btn {
+        right: 10px;
+    }
+    
+    .carrossel-indicator {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .form-montar .checkboxes {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-finalizar {
+        padding: 16px 25px;
+        font-size: 1.1rem;
+    }
+}
 
+@media screen and (max-width: 576px) {
+    .carrossel-wrapper {
+        height: 300px;
+    }
+    
+    .container-carrossel .main-heading {
+        font-size: 1.8rem;
+    }
+    
+    .montar-pedido h2 {
+        font-size: 1.6rem;
+    }
+    
+    .carrossel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .carrossel-indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .btn-finalizar {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+}
