@@ -499,7 +499,7 @@ header span {
     line-height: 1.6;
     color: var(--ciano-muito-claro);
     text-shadow: 2px 2px 4px rgba(0, 0, 50, 0.5);
-    text-color: p(--white)
+    text-color: p(--white);
     position: relative;
     padding: 20px;
     border-radius: 10px;
@@ -1180,6 +1180,7 @@ header span {
         line-height: 1.7;
     }
 }
+
 
 
 
