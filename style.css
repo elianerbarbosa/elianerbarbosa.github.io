@@ -485,6 +485,11 @@ header span {
     pointer-events: none;
 }
 
+.motivacao-content i.fa-quote-left {
+ color: var(--ciano-claro);
+    font-size: 24px;
+}
+
 .motivacao-content {
     max-width: 800px;
     margin: 0 auto;
@@ -1179,6 +1184,7 @@ header span {
         line-height: 1.7;
     }
 }
+
 
 
 
