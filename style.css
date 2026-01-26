@@ -457,7 +457,7 @@ header span {
 }
 
 .servico-card p {
-    color: var(--white);
+    color: var(--cinza-escuro);
     line-height: 1.7;
 }
 
@@ -481,7 +481,7 @@ header span {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(128, 222, 234, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(128, 122, 234, 0.1) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -498,12 +498,11 @@ header span {
     margin-bottom: 40px;
     line-height: 1.6;
     color: var(--ciano-muito-claro);
-    text-shadow: 2px 2px 4px rgba(0, 0, 50, 0.5);
-    text-color: p(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 50, 0.6);
     position: relative;
     padding: 20px;
     border-radius: 10px;
-    background: rgba(0, 0, 250, 0.2);
+    background: rgba(0, 0, 250, 0.3);
     backdrop-filter: blur(5px);
 }
 
@@ -1180,6 +1179,7 @@ header span {
         line-height: 1.7;
     }
 }
+
 
 
 
