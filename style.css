@@ -486,7 +486,7 @@ header span {
 }
 
 .motivacao-content i.fa-quote-left {
- color: var(--ciano-claro);
+ color: var(--branco);
     font-size: 24px;
 }
 
@@ -1184,6 +1184,7 @@ header span {
         line-height: 1.7;
     }
 }
+
 
 
 
