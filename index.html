@@ -1,437 +1,701 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Eliane Barbosa</title>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    <!-- Estilos -->
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- Scripts -->
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Eliane Ramos Barbosa — Analista de Inteligência de Dados</title>
+  <meta name="description" content="Portfólio profissional de Eliane Ramos Barbosa — Engenheira de Produção, Analista de Inteligência de Dados em Logística, São Paulo, Brasil." />
+  <meta name="author" content="Eliane Ramos Barbosa" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Eliane Ramos Barbosa — Portfólio" />
+  <meta property="og:description" content="Analista de Inteligência de Dados especializada em logística e operações." />
+  <meta property="og:type" content="website" />
+
+  <!-- Preconnect para fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLzsA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <!-- Controle de Áudio -->
-    <audio id="motivacao-audio" preload="metadata">
-        <source src="Hall of Fame.mp3" type="audio/mpeg">
-        <source src="Hall da Fama.mp3" type="audio/mpeg">
-        Seu navegador não suporta o elemento de áudio.
-    </audio>
-    
-    <!-- Controle de volume flutuante -->
-    <div class="audio-controls">
-        <button id="toggle-audio" class="audio-btn" title="Controle de música">
-            <i class="fas fa-volume-up"></i>
-        </button>
-        <div class="volume-slider-container">
-            <input type="range" id="volume-slider" min="0" max="100" value="50" class="volume-slider">
-            <span id="volume-percent">50%</span>
-        </div>
+
+  <!-- ===== SKIP LINK (acessibilidade) ===== -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- ===== ÁUDIO ===== -->
+  <audio id="motivacao-audio" preload="none" aria-hidden="true">
+    <source src="Hall of Fame.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ===== PLAYER FLUTUANTE ===== -->
+  <div class="audio-player" id="audio-player" role="region" aria-label="Controle de música">
+    <button
+      id="toggle-audio"
+      class="audio-btn"
+      aria-label="Reproduzir música"
+      aria-pressed="false"
+    >
+      <i class="fas fa-play" aria-hidden="true"></i>
+    </button>
+    <div class="audio-info" aria-live="polite">
+      <span class="audio-track">Hall of Fame — The Script</span>
+      <div class="volume-row">
+        <i class="fas fa-volume-low" aria-hidden="true"></i>
+        <input
+          type="range"
+          id="volume-slider"
+          min="0"
+          max="100"
+          value="50"
+          class="volume-slider"
+          aria-label="Volume"
+        />
+        <span id="volume-label" class="volume-label">50%</span>
+      </div>
     </div>
+  </div>
 
-    <!-- Header e Navegação -->
-    <header>
-        <div class="container header-container">
-            <h1>Dev <span>Eliane Barbosa</span></h1>
-            <button class="menu-toggle" aria-label="Abrir menu">
-                <i class="fas fa-bars"></i>
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#home" class="logo" aria-label="Início — Eliane Barbosa">
+        EB<span class="logo-dot">.</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+
+      <nav id="nav-menu" class="primary-nav" role="navigation" aria-label="Navegação principal">
+        <ul role="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#resumo">Resumo</a></li>
+          <li><a href="#motivacao">Motivação</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main id="conteudo-principal">
+
+    <!-- HOME -->
+    <section id="home" class="section hero-section" aria-label="Apresentação">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="hero-eyebrow">Olá, prazer em conhecê-la.</p>
+          <h1 class="hero-name">
+            <span class="typing-text" data-text="Eliane Ramos Barbosa"></span>
+          </h1>
+          <p class="hero-role">
+            Analista de Inteligência de Dados
+            <span class="role-separator">·</span>
+            Engenheira de Produção
+          </p>
+          <p class="hero-description">
+            Minha trajetória é movida pela busca constante por conhecimento e pela capacidade de
+            transformar dados complexos em decisões estratégicas. Na interseção entre logística,
+            tecnologia e análise, construo soluções que geram impacto real.
+          </p>
+          <div class="hero-actions">
+            <a
+              href="https://drive.google.com/file/d/10AUR64oAmG3yKVGsc8Mp1lzRHGd4vR_9/view?usp=drivesdk"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fas fa-download" aria-hidden="true"></i> Currículo
+            </a>
+            <a
+              href="https://www.instagram.com/reel/C7FtdrqJ0lo/?igsh=cDVsNXR4c2JlMHRs"
+              class="btn btn-ghost"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fas fa-heart" aria-hidden="true"></i> Para mim, Para você
+            </a>
+          </div>
+
+          <!-- Stats inline -->
+          <div class="hero-stats" aria-label="Destaques profissionais">
+            <div class="stat">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">Anos em logística</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat">
+              <span class="stat-number">23+</span>
+              <span class="stat-label">CDs monitorados</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat">
+              <span class="stat-number">4</span>
+              <span class="stat-label">Projetos publicados</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap" aria-hidden="true">
+          <div class="hero-image-ring"></div>
+          <img
+            src="./img/eliane.jpg"
+            alt="Eliane Ramos Barbosa"
+            class="hero-photo"
+            width="420"
+            height="420"
+            loading="eager"
+          />
+          <div class="hero-badge">
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
+            <span>Data Intelligence</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <a href="#sobre" class="scroll-indicator" aria-label="Rolar para Sobre Mim">
+        <span class="scroll-line"></span>
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre" class="section sobre-section" aria-label="Sobre Mim">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-eyebrow">Perfil pessoal</p>
+          <h2 class="section-title">Sobre Mim</h2>
+          <div class="section-line" aria-hidden="true"></div>
+        </header>
+
+        <div class="sobre-grid">
+          <figure class="sobre-figure">
+            <img
+              src="./img/eliane.jpg"
+              alt="Eliane Ramos Barbosa"
+              class="sobre-photo"
+              width="380"
+              height="460"
+              loading="lazy"
+            />
+          </figure>
+
+          <div class="sobre-content">
+            <h3 class="sobre-name">Eliane Ramos Barbosa</h3>
+
+            <div class="sobre-bio">
+              <p>
+                Acredito que o aprendizado contínuo é a base para a excelência. Construí uma
+                carreira multifacetada em logística, passando por funções desde a operação até
+                a análise estratégica — desenvolvendo uma visão integral da cadeia de suprimentos.
+              </p>
+              <p>
+                Atualmente atuo como <strong>Assistente de Inteligência de Dados</strong>,
+                transformando dados brutos em insights acionáveis. Paralelamente, exerci por quatro
+                anos a função de <strong>Líder de Equipe</strong> no setor comercial, o que
+                enriquece minha atuação com uma perspectiva orientada a resultados.
+              </p>
+              <p>
+                Fora do ambiente profissional, exercícios físicos e viagens alimentam minha
+                curiosidade e resiliência — qualidades que traduzo em flexibilidade e criatividade
+                no trabalho.
+              </p>
+            </div>
+
+            <ul class="sobre-details" aria-label="Informações de contato">
+              <li class="detail-item">
+                <i class="fas fa-calendar-days detail-icon" aria-hidden="true"></i>
+                <div>
+                  <dt>Aniversário</dt>
+                  <dd>05 de março</dd>
+                </div>
+              </li>
+              <li class="detail-item">
+                <i class="fas fa-location-dot detail-icon" aria-hidden="true"></i>
+                <div>
+                  <dt>Localização</dt>
+                  <dd>São Paulo, Brasil</dd>
+                </div>
+              </li>
+              <li class="detail-item">
+                <i class="fas fa-laptop-code detail-icon" aria-hidden="true"></i>
+                <div>
+                  <dt>Freelance</dt>
+                  <dd>Disponível</dd>
+                </div>
+              </li>
+              <li class="detail-item">
+                <i class="fas fa-phone detail-icon" aria-hidden="true"></i>
+                <div>
+                  <dt>Telefone</dt>
+                  <dd><a href="tel:+5511997732399">+55 11 99773-2399</a></dd>
+                </div>
+              </li>
+              <li class="detail-item">
+                <i class="fas fa-envelope detail-icon" aria-hidden="true"></i>
+                <div>
+                  <dt>E-mail</dt>
+                  <dd><a href="mailto:engproducao.eliane@gmail.com">engproducao.eliane@gmail.com</a></dd>
+                </div>
+              </li>
+              <li class="detail-item">
+                <i class="fas fa-flag detail-icon" aria-hidden="true"></i>
+                <div>
+                  <dt>Nacionalidade</dt>
+                  <dd>Brasileira</dd>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUMO / HABILIDADES -->
+    <section id="resumo" class="section resumo-section" aria-label="Resumo Profissional">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-eyebrow">Tudo sobre mim</p>
+          <h2 class="section-title">Resumo</h2>
+          <div class="section-line" aria-hidden="true"></div>
+        </header>
+
+        <ul class="cards-grid" role="list">
+          <li class="card" tabindex="0">
+            <div class="card-icon" aria-hidden="true">
+              <i class="fas fa-cog"></i>
+            </div>
+            <h3 class="card-title">Engenharia de Produção</h3>
+            <p class="card-text">
+              Formação que abrange logística, gestão de produto, segurança do trabalho e gestão
+              econômica — uma base sólida para resolver problemas complexos com visão sistêmica.
+            </p>
+          </li>
+
+          <li class="card" tabindex="0">
+            <div class="card-icon" aria-hidden="true">
+              <i class="fas fa-users-gear"></i>
+            </div>
+            <h3 class="card-title">MBA em Gestão de Pessoas</h3>
+            <p class="card-text">
+              Gestão com pessoas vai além de resultados: é auxiliá-las a reencontrar as razões que
+              as fazem crescer. Quatro anos liderando equipes comerciais reforçaram essa convicção.
+            </p>
+          </li>
+
+          <li class="card" tabindex="0">
+            <div class="card-icon" aria-hidden="true">
+              <i class="fas fa-dolly"></i>
+            </div>
+            <h3 class="card-title">Técnica em Logística</h3>
+            <p class="card-text">
+              Experiência completa da operação à análise estratégica, passando por auxiliar de
+              logística, almoxarife, analista Jr. e assistente de transportes.
+            </p>
+          </li>
+
+          <li class="card" tabindex="0">
+            <div class="card-icon" aria-hidden="true">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="card-title">Inteligência de Dados</h3>
+            <p class="card-text">
+              Transformar dados em decisões acionáveis é minha rotina — dashboards, SQL, automações
+              e pipelines que impactam diretamente a eficiência operacional.
+            </p>
+          </li>
+
+          <li class="card" tabindex="0">
+            <div class="card-icon" aria-hidden="true">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+            <h3 class="card-title">Disciplina & Bem-estar</h3>
+            <p class="card-text">
+              A prática regular de exercícios físicos sustenta minha energia e foco. Mente sã,
+              corpo são — um princípio que aplico tanto na vida pessoal quanto profissional.
+            </p>
+          </li>
+
+          <li class="card" tabindex="0">
+            <div class="card-icon" aria-hidden="true">
+              <i class="fas fa-plane-departure"></i>
+            </div>
+            <h3 class="card-title">Curiosidade pelo Mundo</h3>
+            <p class="card-text">
+              Cada viagem amplia horizontes e cultiva empatia. Explorar novas culturas alimenta a
+              adaptabilidade e criatividade que levo para o trabalho.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MOTIVAÇÃO -->
+    <section id="motivacao" class="section motivacao-section" aria-label="O que me motiva">
+      <div class="motivacao-bg" aria-hidden="true"></div>
+      <div class="container motivacao-inner">
+        <header class="section-header section-header--light">
+          <p class="section-eyebrow section-eyebrow--light">Propósito</p>
+          <h2 class="section-title section-title--light">O Que Me Motiva</h2>
+          <div class="section-line section-line--light" aria-hidden="true"></div>
+        </header>
+
+        <div class="quotes-grid" aria-label="Frases motivacionais">
+          <blockquote class="quote-card">
+            <p>Se o plano não funciona, mude o plano, não a meta.</p>
+          </blockquote>
+          <blockquote class="quote-card quote-card--accent">
+            <p>
+              Você é mais valente do que acredita, mais forte do que parece e mais capaz do que
+              imagina.
+            </p>
+          </blockquote>
+        </div>
+
+        <div class="musica-badge" role="complementary" aria-label="Música tema">
+          <i class="fas fa-music" aria-hidden="true"></i>
+          <span>Hall of Fame — The Script ft. will.i.am</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="section projetos-section" aria-label="Meus Projetos">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-eyebrow">Portfólio</p>
+          <h2 class="section-title">Meus Projetos</h2>
+          <div class="section-line" aria-hidden="true"></div>
+        </header>
+
+        <ul class="projetos-grid" role="list">
+          <li>
+            <a
+              href="https://elianerbarbosa.github.io/sobremim/"
+              class="projeto-card"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver projeto Sobre Mim (abre em nova aba)"
+            >
+              <div class="projeto-icon" aria-hidden="true">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="projeto-info">
+                <h3>Sobre Mim</h3>
+                <p>Página pessoal com informações detalhadas</p>
+              </div>
+              <i class="fas fa-arrow-up-right-from-square projeto-arrow" aria-hidden="true"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://elianerbarbosa.github.io/planfinanceiro/"
+              class="projeto-card"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver projeto Planejamento Financeiro (abre em nova aba)"
+            >
+              <div class="projeto-icon" aria-hidden="true">
+                <i class="fas fa-chart-pie"></i>
+              </div>
+              <div class="projeto-info">
+                <h3>Planejamento Financeiro</h3>
+                <p>Ferramenta interativa para controle financeiro pessoal</p>
+              </div>
+              <i class="fas fa-arrow-up-right-from-square projeto-arrow" aria-hidden="true"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://elianerbarbosa.github.io/cardapio/index.html"
+              class="projeto-card"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver projeto Cardápio Digital (abre em nova aba)"
+            >
+              <div class="projeto-icon" aria-hidden="true">
+                <i class="fas fa-utensils"></i>
+              </div>
+              <div class="projeto-info">
+                <h3>Cardápio Digital</h3>
+                <p>Cardápio responsivo para restaurantes</p>
+              </div>
+              <i class="fas fa-arrow-up-right-from-square projeto-arrow" aria-hidden="true"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://elianerbarbosa.github.io/ods8-site/"
+              class="projeto-card"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver projeto ODS 8 (abre em nova aba)"
+            >
+              <div class="projeto-icon" aria-hidden="true">
+                <i class="fas fa-globe-americas"></i>
+              </div>
+              <div class="projeto-info">
+                <h3>ODS 8</h3>
+                <p>Site sobre Objetivos de Desenvolvimento Sustentável</p>
+              </div>
+              <i class="fas fa-arrow-up-right-from-square projeto-arrow" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Carrossel -->
+        <div class="carrossel-wrap" role="region" aria-label="Galeria de projetos" aria-roledescription="carrossel">
+          <div class="carrossel" id="carrossel">
+            <div class="carrossel-track" id="carrossel-track">
+              <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 1 de 4">
+                <img src="./img/Capturaplanfin.png" alt="Captura de tela do projeto Planejamento Financeiro" loading="lazy" />
+                <div class="slide-caption">Planejamento Financeiro</div>
+              </div>
+              <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 2 de 4">
+                <img src="./img/hampr.png" alt="Captura de tela do projeto Cardápio Digital" loading="lazy" />
+                <div class="slide-caption">Cardápio Digital</div>
+              </div>
+              <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 3 de 4">
+                <img src="./img/Capturasobremim.png" alt="Captura de tela do projeto Sobre Mim" loading="lazy" />
+                <div class="slide-caption">Sobre Mim</div>
+              </div>
+              <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 4 de 4">
+                <img src="./img/Capturaods.png" alt="Captura de tela do projeto ODS 8" loading="lazy" />
+                <div class="slide-caption">ODS 8</div>
+              </div>
+            </div>
+
+            <button class="carrossel-btn carrossel-prev" aria-label="Slide anterior">
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>
             </button>
-            <nav class="navegacao-primaria">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre Mim</a></li>
-                    <li><a href="#resumo">Resumo</a></li>
-                    <li><a href="#motivacao">Motivação</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+            <button class="carrossel-btn carrossel-next" aria-label="Próximo slide">
+              <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
 
-    <!-- Seção Principal - HOME -->
-    <section id="home" class="hero-section">
-        <div class="container hero-container">
-            <div class="hero-text">
-                <h2>Olá, prazer. Eu sou...</h2>
-                <h2 class="digitando">Eliane Ramos Barbosa</h2>
-                <div class="hero-descricao">
-                    <p>Minha trajetória é movida pela busca constante por conhecimento e pela capacidade de transformar desafios em oportunidades. Como engenheira de produção, desenvolvi uma base sólida em análise de sistemas, eficiência e resolução de problemas complexos.</p>
-                    <p>Sou profundamente fascinada pela tecnologia e mantenho-me constantemente atualizada sobre inovações e tendências do setor. Foi essa mesma curiosidade que me levou ao universo financeiro, onde descobri uma paixão genuína pela interseção entre tecnologia e finanças.</p>
-                    <p>Estou pronta para contribuir em um ambiente dinâmico, onde possa agregar valor contínuo e crescer junto à organização.</p>
-                </div>
-                <div class="hero-buttons">
-                    <a href="https://drive.google.com/file/d/10AUR64oAmG3yKVGsc8Mp1lzRHGd4vR_9/view?usp=drivesdk" class="btn btn-primary" target="_blank">
-                        <i class="fas fa-download"></i> Download Currículo
-                    </a>
-                    <a href="https://www.instagram.com/reel/C7FtdrqJ0lo/?igsh=cDVsNXR4c2JlMHRs" class="btn btn-secondary" target="_blank">
-                        <i class="fas fa-heart"></i> Para mim, Para você
-                    </a>
-                </div>
+            <div class="carrossel-dots" role="tablist" aria-label="Selecionar slide">
+              <button class="dot active" role="tab" aria-selected="true" aria-label="Slide 1" data-slide="0"></button>
+              <button class="dot" role="tab" aria-selected="false" aria-label="Slide 2" data-slide="1"></button>
+              <button class="dot" role="tab" aria-selected="false" aria-label="Slide 3" data-slide="2"></button>
+              <button class="dot" role="tab" aria-selected="false" aria-label="Slide 4" data-slide="3"></button>
             </div>
-            <div class="hero-image">
-                <img src="./img/eliane.jpg" alt="Eliane Barbosa - Desenvolvedora">
-            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Seção SOBRE MIM -->
-    <section id="sobre" class="sobre-section">
-        <div class="container">
-            <div class="section-title">
-                <h1>Sobre Mim</h1>
-                <p class="subtitulo-claro">Profissional - Perfil pessoal</p>
-                <div class="title-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            
-            <div class="sobre-content">
-                <div class="sobre-image">
-                    <img src="./img/eliane.jpg" alt="Eliane Barbosa">
-                </div>
-                <div class="sobre-info">
-                    <h2>Eu sou Eliane Barbosa - Eliane Ramos</h2>
-                    <div class="sobre-text">
-                        <p>Sempre acreditei que os estudos fossem o caminho mais fácil para alcançar o sucesso. Através dos estudos tive a oportunidade de galgar conhecimentos incríveis. Com uma trajetória movida pela curiosidade intelectual e pela crença de que o aprendizado contínuo é a base para a excelência, construí uma carreira multifacetada e sólida na logística. A facilidade natural para aprender e a busca constante por desafios fora da zona de conforto me tornaram um profissional multiprofissional e polivalente, com mais de cinco anos de experiência em cargos estratégicos que vão desde a operação até a análise.</p>
-                        <p>Minha atuação abrangeu funções como Auxiliar de Logística, Almoxarife, Analista de Logística Jr., Assistente de Transportes e Analista Operacional (Transportes), desenvolvendo uma visão integral da cadeia. Atualmente, atuo como Assistente de Inteligência de Dados na área de logística, onde aplico minha capacidade autodidata para transformar informações em insights acionáveis, otimizando processos e apoiando a tomada de decisão.</p>
-                        <p>Paralelamente, por quatro anos, exerci a função de Líder de Equipe no setor comercial, fortalecendo habilidades interpessoais, gestão de pessoas e performance operacional, uma combinação que enriquece minha atuação na logística com uma perspectiva orientada a resultados e à eficiência. Fora do ambiente profissional, mantenho o corpo e a mente em movimento através de exercícios físicos e, sempre que possível, de viagens. Acredito que explorar novos lugares e culturas é uma extensão do meu desejo por crescimento: amplia horizontes, cultiva a empatia e oferece uma visão de mundo mais rica e adaptável, qualidades que traduzo em flexibilidade, resiliência e criatividade no trabalho. Estou pronta para agregar com versatilidade, espírito analítico e liderança, sempre em busca de novos desafios e oportunidades para evoluir.</p>
-                    </div>
-                    
-                    <div class="sobre-details">
-                        <div class="detail-item">
-                            <i class="fas fa-calendar-days"></i>
-                            <div>
-                                <h4>Aniversário</h4>
-                                <p>05 de março</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-laptop-code"></i>
-                            <div>
-                                <h4>Freelance</h4>
-                                <p>Disponível</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-location-dot"></i>
-                            <div>
-                                <h4>Endereço</h4>
-                                <p>São Paulo, Brasil</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-flag"></i>
-                            <div>
-                                <h4>Nacionalidade</h4>
-                                <p>Brasileira</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Telefone</h4>
-                                <p>+55 11 99773-2399</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>engproducao.eliane@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- CONTATO -->
+    <section id="contato" class="section contato-section" aria-label="Entre em Contato">
+      <div class="container">
+        <header class="section-header section-header--light">
+          <p class="section-eyebrow section-eyebrow--light">Vamos conversar</p>
+          <h2 class="section-title section-title--light">Entre em Contato</h2>
+          <div class="section-line section-line--light" aria-hidden="true"></div>
+        </header>
 
-    <!-- Seção RESUMO -->
-    <section id="resumo" class="resumo-section">
-        <div class="container">
-            <div class="section-title">
-                <h1>Resumo</h1>
-                <p>Perfil profissional - Tudo sobre mim</p>
-                <div class="title-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            
-            <div class="servicos-grid">
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <h3>Engenharia de Produção</h3>
-                    <p>Um dos primeiros motivos para cursar Engenharia de Produção diz respeito à abrangência da área. Pode desenvolver atividades em setores ou empresas de Logística, Gestão de Produto, Segurança do Trabalho, Gestão Econômica, Gestão Ambiental e diversas outras.</p>
-                </div>
-                
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-users-gear"></i>
-                    </div>
-                    <h3>MBA em Gestão de Pessoas</h3>
-                    <p>Gestão de pessoas não é controlar, mas sim, orientar. Gestão com pessoas está para além de fazê-las alcançar bons resultados. Trata-se, sobretudo, de auxiliá-las a reencontrar as razões que as fazem sorrir.</p>
-                </div>
-                
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-dolly"></i>
-                    </div>
-                    <h3>Técnica em Logística</h3>
-                    <p>A logística é o caminho mais curto entre dois pontos. A logística está presente em qualquer processo de desenvolvimento. Um fluxo eficiente que seja capaz de levar um produto até o seu comprador, garantindo que o processo de compra e venda seja concluído chama-se logística.</p>
-                </div>
-                
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Investimentos</h3>
-                    <p>A paz financeira não é a aquisição de coisas. É aprender a viver com menos do que você ganha. Não é quanto dinheiro você ganha, mas quanto dinheiro você "guarda".</p>
-                </div>
-                
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <h3>Academia</h3>
-                    <p>"Mente sã, corpo são". A prática regular de exercícios físicos envolve muito mais do que estética. Ela contribui para o bem-estar físico, saúde mental, bom funcionamento do coração, circulação sanguínea, da respiração e até mesmo dos hormônios.</p>
-                </div>
-                
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-plane-departure"></i>
-                    </div>
-                    <h3>Viajar</h3>
-                    <p>Poucas coisas na vida são melhores que viajar. Viajar é mais do que a visão de pontos turísticos, é a mudança que acontece, profunda e permanentemente, no conceito sobre o que é a vida. A cada nova viagem, voltamos para casa com novos brilhos no olhar.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção MOTIVAÇÃO -->
-    <section id="motivacao" class="motivacao-section">
-        <div class="container">
-            <div class="section-title">
-                <h1 class="titulo-claro">O Que Me Motiva</h1>
-                <div class="motivacao-content">
-                    <p class="motivacao-text">
-                        <i class="fas fa-quote-left"></i>
-                        Se o plano não funciona, mude o plano, não a meta.
-                        <i class="fas fa-quote-right"></i>
-                    </p>
-                    <p class="motivacao-text">
-                        <i class="fas fa-quote-left"></i>
-                        Você é mais valente do que acredita, mais forte do que parece e está mais preparado do que imagina.
-                        <i class="fas fa-quote-right"></i>
-                    </p>
-                    <div class="musica-info">
-                        <i class="fas fa-music"></i>
-                        <span>Hall of Fame - The Script ft. will.i.am</span>
-                    </div>
-                </div>
-                <div class="title-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção PROJETOS -->
-    <section id="projetos" class="projetos-section">
-        <div class="container">
-            <div class="section-title">
-                <h1>Meus Projetos</h1>
-                <p>Conheça alguns dos meus trabalhos</p>
-                <div class="title-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            
-            <div class="projetos-links">
-                <a href="https://elianerbarbosa.github.io/sobremim/" class="projeto-link" target="_blank">
-                    <div class="projeto-icon">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>Sobre Mim</h3>
-                    <p>Página pessoal com informações detalhadas</p>
+        <div class="contato-grid">
+          <div class="contato-info">
+            <p>Estou aberta a novas oportunidades, projetos e conexões. Mande uma mensagem!</p>
+            <ul class="contato-links" aria-label="Links de contato direto">
+              <li>
+                <a href="mailto:engproducao.eliane@gmail.com">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  engproducao.eliane@gmail.com
                 </a>
-                
-                <a href="https://elianerbarbosa.github.io/planfinanceiro/" class="projeto-link" target="_blank">
-                    <div class="projeto-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>Planejamento Financeiro</h3>
-                    <p>Ferramenta para controle financeiro pessoal</p>
+              </li>
+              <li>
+                <a href="https://wa.me/5511997732399" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                  WhatsApp
                 </a>
-                
-                <a href="https://elianerbarbosa.github.io/cardapio/index.html" class="projeto-link" target="_blank">
-                    <div class="projeto-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Cardápio</h3>
-                    <p>Cardápio digital para restaurantes</p>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/elianeramosbarbosa-erb" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  LinkedIn
                 </a>
-                
-                <a href="https://elianerbarbosa.github.io/ods8-site/" class="projeto-link" target="_blank">
-                    <div class="projeto-icon">
-                        <i class="fas fa-globe-americas"></i>
-                    </div>
-                    <h3>ODS 8</h3>
-                    <p>Site sobre Objetivos de Desenvolvimento Sustentável</p>
-                </div>
+              </li>
+            </ul>
+          </div>
+
+          <form
+            class="contato-form"
+            action="https://formsubmit.co/elianeli25@hotmail.com"
+            method="POST"
+            novalidate
+            aria-label="Formulário de contato"
+          >
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="Novo contato — Portfólio Eliane Barbosa" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome <span aria-hidden="true">*</span><span class="sr-only">(obrigatório)</span></label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Seu nome completo"
+                  required
+                  autocomplete="name"
+                  aria-required="true"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail <span aria-hidden="true">*</span><span class="sr-only">(obrigatório)</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="seu@email.com"
+                  required
+                  autocomplete="email"
+                  aria-required="true"
+                />
+              </div>
             </div>
-            
-            <div class="carrossel-container">
-                <div class="carrossel">
-                    <div class="carrossel-slides">
-                        <div class="slide active">
-                            <img src="./img/Capturaplanfin.png" alt="Planejamento Financeiro">
-                            <div class="slide-caption">Planejamento Financeiro</div>
-                        </div>
-                        <div class="slide">
-                            <img src="./img/hampr.png" alt="Cardápio">
-                            <div class="slide-caption">Cardápio Digital</div>
-                        </div>
-                        <div class="slide">
-                            <img src="./img/Capturasobremim.png" alt="Sobre Mim">
-                            <div class="slide-caption">Sobre Mim</div>
-                        </div>
-                        <div class="slide">
-                            <img src="./img/Capturaods.png" alt="ODS 8">
-                            <div class="slide-caption">ODS 8</div>
-                        </div>
-                    </div>
-                    <button class="carrossel-prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carrossel-next">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <div class="carrossel-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                    </div>
-                </div>
+
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(11) 99999-9999"
+                autocomplete="tel"
+                inputmode="numeric"
+              />
             </div>
+
+            <div class="form-group">
+              <label for="mensagem">Mensagem <span aria-hidden="true">*</span><span class="sr-only">(obrigatório)</span></label>
+              <textarea
+                id="mensagem"
+                name="mensagem"
+                placeholder="Como posso ajudar?"
+                rows="5"
+                required
+                aria-required="true"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              <span>Enviar Mensagem</span>
+            </button>
+          </form>
         </div>
+      </div>
     </section>
 
-    <!-- Seção CONTATO -->
-    <section id="contato" class="contato-section">
-        <div class="container">
-            <div class="section-title">
-                <h1>Entre em Contato</h1>
-                <p>Vamos conversar sobre oportunidades</p>
-                <div class="title-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            
-            <form class="contato-form" action="https://formsubmit.co/elianeli25@hotmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Novo contato do portfólio - Eliane Barbosa">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="nome">Nome *</label>
-                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
-                </div>
-                
-                <div class="form-group">
-                    <label for="mensagem">Mensagem *</label>
-                    <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui..." rows="5" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary btn-enviar">
-                    <i class="fas fa-paper-plane"></i> Enviar Mensagem
-                </button>
-            </form>
-        </div>
-    </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Como me encontrar</h3>
-                    <p>Estou sempre aberta a novas oportunidades e conexões!</p>
-                </div>
-                
-                <div class="redes-sociais">
-                    <a href="https://www.linkedin.com/in/elianeramosbarbosa-erb" class="social-link" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/elianerbarbosa" class="social-link" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.instagram.com/elianeli25" class="social-link" target="_blank" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://wa.me/5511997732399" class="social-link" target="_blank" title="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="mailto:engproducao.eliane@gmail.com" class="social-link" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-                
-                <div class="creditos">
-                    <h4>Créditos e Parceiros</h4>
-                    <div class="parceiros-logos">
-                        <a href="https://www.linkedin.com/in/julianaribeirof" target="_blank">
-                            <img src="./img/july.r.png" alt="Juliana Ribeiro">
-                        </a>
-                        <a href="https://www.jabrasil.org.br" target="_blank">
-                            <img src="./img/jjabasil.png" alt="JA Brasil">
-                        </a>
-                        <a href="https://www.grupoccr.com.br/instituto-ccr/projeto-elas-na-tech" target="_blank">
-                            <img src="./img/elantecc.png" alt="Elas na Tech">
-                        </a>
-                        <a href="https://www.w3schools.com" target="_blank">
-                            <img src="./img/w3sc.png" alt="W3Schools">
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="copyright">
-                    <p>&copy; 2023 Desenvolvido por Eliane R. Barbosa. Todos os direitos reservados.</p>
-                </div>
-            </div>
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-logo">EB<span class="logo-dot">.</span></p>
+          <p>Eliane Ramos Barbosa</p>
         </div>
-    </footer>
+
+        <nav aria-label="Redes sociais">
+          <ul class="social-links" role="list">
+            <li>
+              <a href="https://www.linkedin.com/in/elianeramosbarbosa-erb" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/elianerbarbosa" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/elianeli25" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/5511997732399" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:engproducao.eliane@gmail.com" class="social-link" aria-label="E-mail">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-credits">
+        <h3>Créditos & Parceiros</h3>
+        <ul class="parceiros" role="list">
+          <li>
+            <a href="https://www.linkedin.com/in/julianaribeirof" target="_blank" rel="noopener noreferrer" aria-label="Juliana Ribeiro">
+              <img src="./img/july.r.png" alt="Juliana Ribeiro" width="70" height="70" loading="lazy" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.jabrasil.org.br" target="_blank" rel="noopener noreferrer" aria-label="JA Brasil">
+              <img src="./img/jjabasil.png" alt="JA Brasil" width="70" height="70" loading="lazy" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.grupoccr.com.br/instituto-ccr/projeto-elas-na-tech" target="_blank" rel="noopener noreferrer" aria-label="Elas na Tech">
+              <img src="./img/elantecc.png" alt="Elas na Tech" width="70" height="70" loading="lazy" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer" aria-label="W3Schools">
+              <img src="./img/w3sc.png" alt="W3Schools" width="70" height="70" loading="lazy" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <p class="footer-copy">
+        &copy; <span id="ano-atual"></span> Eliane R. Barbosa — Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
-
