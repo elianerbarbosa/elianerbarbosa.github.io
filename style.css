@@ -272,6 +272,18 @@ button {
   transform: scale(1.08);
 }
 
+/* Dica pulsante no botão de áudio até o usuário interagir */
+.audio-btn.pulse-hint {
+  animation: pulse-btn 1.8s ease-in-out infinite;
+  box-shadow: 0 0 0 0 rgba(0, 200, 224, 0.6);
+}
+
+@keyframes pulse-btn {
+  0%   { box-shadow: 0 0 0 0   rgba(0, 200, 224, 0.6); }
+  60%  { box-shadow: 0 0 0 10px rgba(0, 200, 224, 0); }
+  100% { box-shadow: 0 0 0 0   rgba(0, 200, 224, 0); }
+}
+
 .audio-btn.playing {
   background: var(--cyan);
 }
