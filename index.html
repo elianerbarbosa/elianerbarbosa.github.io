@@ -555,12 +555,16 @@
             method="POST"
             novalidate
             aria-label="Formulário de contato"
+            id="contact-form"
           >
             <!-- FormSubmit config -->
             <input type="hidden" name="_subject" value="Novo contato — Portfólio Eliane Barbosa" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="" />
+            <input type="hidden" name="_autoresponse" value="Olá! Recebi sua mensagem e retornarei em breve. Atenciosamente, Eliane Barbosa." />
+            <!-- _next: redirecionar de volta ao portfólio após envio bem-sucedido -->
+            <!-- Atualize a URL abaixo com o endereço real do seu site no GitHub Pages -->
+            <input type="hidden" name="_next" value="https://elianerbarbosa.github.io/#contato" />
 
             <div class="form-row">
               <div class="form-group">
