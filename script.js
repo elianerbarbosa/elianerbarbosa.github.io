@@ -414,11 +414,12 @@ function initForm() {
     });
   });
 
-  /* ── Submit ── */
-  form.addEventListener('submit', (e) => {
-    let valid = true;
+  /* ── Submit via fetch (sem redirecionamento de página) ── */
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    /* Validar campos obrigatórios */
+    /* Validar */
+    let valid = true;
     $$('[required]', form).forEach((field) => {
       if (!field.value.trim()) {
         setError(field, 'Este campo é obrigatório.');
@@ -433,21 +434,78 @@ function initForm() {
     });
 
     if (!valid) {
-      e.preventDefault();
       const firstError = form.querySelector('.is-invalid');
       firstError?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       firstError?.focus();
       return;
     }
 
-    /* Feedback visual de envio */
+    /* UI: estado de carregamento */
     const submitBtn = form.querySelector('.btn-submit');
-    const span      = submitBtn.querySelector('span');
+    const btnIcon   = submitBtn.querySelector('i');
+    const btnSpan   = submitBtn.querySelector('span');
+    const originalIcon  = btnIcon.className;
+    const originalText  = btnSpan?.textContent;
 
+    submitBtn.disabled = true;
     submitBtn.classList.add('loading');
-    submitBtn.querySelector('i').className = 'fas fa-spinner fa-spin';
-    if (span) span.textContent = 'Enviando…';
+    btnIcon.className  = 'fas fa-spinner fa-spin';
+    if (btnSpan) btnSpan.textContent = 'Enviando…';
+
+    /* Enviar via fetch para FormSubmit (retorna JSON com _next desativado) */
+    try {
+      const formData = new FormData(form);
+      // Forçar resposta JSON do FormSubmit (ignora _next)
+      formData.set('_next', '');
+
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok || res.status === 200 || res.redirected) {
+        /* ✅ Sucesso */
+        showFormMessage(
+          form,
+          'success',
+          '🎉 Mensagem enviada com sucesso! Retornarei em breve.'
+        );
+        form.reset();
+      } else {
+        throw new Error(`Status ${res.status}`);
+      }
+    } catch {
+      /* ❌ Erro de rede ou FormSubmit */
+      showFormMessage(
+        form,
+        'error',
+        '⚠️ Não foi possível enviar. Tente pelo WhatsApp ou e-mail direto.'
+      );
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('loading');
+      btnIcon.className = originalIcon;
+      if (btnSpan) btnSpan.textContent = originalText;
+    }
   });
+
+  /* ── Banner de feedback inline ── */
+  function showFormMessage(formEl, type, text) {
+    // Remove banner anterior, se houver
+    formEl.parentNode.querySelector('.form-banner')?.remove();
+
+    const banner = document.createElement('div');
+    banner.className = `form-banner form-banner--${type}`;
+    banner.setAttribute('role', 'status');
+    banner.setAttribute('aria-live', 'polite');
+    banner.textContent = text;
+
+    formEl.insertAdjacentElement('afterend', banner);
+
+    // Auto-remover após 7s
+    setTimeout(() => banner.remove(), 7000);
+  }
 }
 
 
