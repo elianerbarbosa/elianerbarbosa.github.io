@@ -1,0 +1,15 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Node (caso use em algum momento)
+node_modules/
+package-lock.json
+
+# Temporários
+*.tmp
+*.log
