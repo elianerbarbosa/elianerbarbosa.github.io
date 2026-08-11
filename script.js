@@ -80,24 +80,29 @@ function initTyping() {
 
 /* ────────────────────────────────────────────────
    2. PLAYER DE ÁUDIO
+   Regra de ouro dos navegadores modernos:
+   audio.play() só funciona após uma interação
+   do usuário (click, tap, tecla). Nunca autoplay.
 ─────────────────────────────────────────────── */
 function initAudio() {
-  const audio      = $('#motivacao-audio');
-  const toggleBtn  = $('#toggle-audio');
-  const volSlider  = $('#volume-slider');
-  const volLabel   = $('#volume-label');
+  const audio         = $('#motivacao-audio');
+  const toggleBtn     = $('#toggle-audio');
+  const volSlider     = $('#volume-slider');
+  const volLabel      = $('#volume-label');
+  const player        = $('#audio-player');
   const motivaSection = $('#motivacao');
 
   if (!audio || !toggleBtn) return;
 
-  let isPlaying = false;
-  let fadeInterval = null;
+  let isPlaying      = false;
+  let userInteracted = false; // flag: usuário já clicou ao menos uma vez
+  let fadeInterval   = null;
 
-  /* Estado inicial */
-  audio.volume = 0.5;
-  audio.currentTime = 42;   // Iniciar no refrão
+  /* Configuração inicial do elemento de áudio */
+  audio.volume      = 0.5;
+  audio.currentTime = 42; // começa no refrão
 
-  /* ── Helpers ── */
+  /* ── Atualizar visual do botão ── */
   function updateBtn(playing) {
     const icon = toggleBtn.querySelector('i');
     icon.className = playing ? 'fas fa-pause' : 'fas fa-play';
@@ -106,17 +111,25 @@ function initAudio() {
     toggleBtn.classList.toggle('playing', playing);
   }
 
+  /* ── Limpar fade em andamento ── */
   function clearFade() {
-    if (fadeInterval) {
-      clearInterval(fadeInterval);
-      fadeInterval = null;
-    }
+    if (fadeInterval) { clearInterval(fadeInterval); fadeInterval = null; }
   }
 
-  function fadeIn(targetVol = 0.5, stepMs = 80) {
+  /* ── Fade in ── */
+  function fadeIn(targetVol = 0.5) {
     clearFade();
     audio.volume = 0;
-    audio.play().catch(() => {});
+    // .play() retorna Promise — capturar rejeição silenciosamente
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch((err) => {
+        // Autoplay bloqueado — só atualiza UI sem travar
+        console.warn('Áudio bloqueado pelo navegador:', err.message);
+        isPlaying = false;
+        updateBtn(false);
+      });
+    }
     fadeInterval = setInterval(() => {
       if (audio.volume < targetVol - 0.04) {
         audio.volume = Math.min(audio.volume + 0.04, 1);
@@ -124,10 +137,11 @@ function initAudio() {
         audio.volume = targetVol;
         clearFade();
       }
-    }, stepMs);
+    }, 80);
   }
 
-  function fadeOut(onDone, stepMs = 80) {
+  /* ── Fade out ── */
+  function fadeOut(onDone) {
     clearFade();
     fadeInterval = setInterval(() => {
       if (audio.volume > 0.04) {
@@ -138,78 +152,77 @@ function initAudio() {
         clearFade();
         if (typeof onDone === 'function') onDone();
       }
-    }, stepMs);
+    }, 80);
   }
 
-  /* ── Toggle manual ── */
+  /* ── Botão play/pause (interação explícita do usuário) ── */
   toggleBtn.addEventListener('click', () => {
+    userInteracted = true;
     if (audio.paused) {
+      if (audio.currentTime === 0 || audio.ended) audio.currentTime = 42;
       fadeIn(Number(volSlider.value) / 100);
       isPlaying = true;
       updateBtn(true);
     } else {
-      fadeOut(() => {
-        isPlaying = false;
-        updateBtn(false);
-      });
+      fadeOut(() => { isPlaying = false; updateBtn(false); });
     }
   });
 
-  /* ── Volume ── */
+  /* ── Controle de volume ── */
   volSlider.addEventListener('input', () => {
     const vol = Number(volSlider.value) / 100;
-    audio.volume = vol;
+    if (!audio.paused) audio.volume = vol;
     if (volLabel) volLabel.textContent = `${volSlider.value}%`;
   });
 
-  /* ── Intersection Observer na seção de motivação ── */
+  /* ── Auto-play na seção Motivação
+        Só executa se o usuário já interagiu antes
+        (clicou no botão ao menos uma vez).
+        Isso respeita a política de autoplay dos navegadores. ── */
   if (motivaSection && 'IntersectionObserver' in window) {
-    let triggered = false;
+    let sectionActive = false;
 
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !triggered) {
-            triggered = true;
-            audio.currentTime = 42;
-            fadeIn(Number(volSlider.value) / 100);
-            isPlaying = true;
-            updateBtn(true);
-          } else if (!entry.isIntersecting && isPlaying) {
-            fadeOut(() => {
-              isPlaying = false;
-              triggered = false;
-              updateBtn(false);
-            });
-          }
-        });
-      },
-      { threshold: 0.35 }
-    );
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !sectionActive && userInteracted && audio.paused) {
+          sectionActive = true;
+          audio.currentTime = 42;
+          fadeIn(Number(volSlider.value) / 100);
+          isPlaying = true;
+          updateBtn(true);
+        } else if (!entry.isIntersecting && isPlaying) {
+          sectionActive = false;
+          fadeOut(() => { isPlaying = false; updateBtn(false); });
+        }
+      });
+    }, { threshold: 0.35 });
 
     obs.observe(motivaSection);
   }
 
-  /* ── Parar ao ocultar aba ── */
+  /* ── Pausar ao minimizar/trocar de aba ── */
   document.addEventListener('visibilitychange', () => {
     if (document.hidden && !audio.paused) {
-      fadeOut(() => {
-        isPlaying = false;
-        updateBtn(false);
-      });
+      fadeOut(() => { isPlaying = false; updateBtn(false); });
     }
   });
 
-  /* ── Tecla Espaço (fora de inputs) ── */
+  /* ── Tecla Espaço (atalho global) ── */
   document.addEventListener('keydown', (e) => {
-    if (
-      e.code === 'Space' &&
-      !e.target.matches('input, textarea, button, [contenteditable]')
-    ) {
+    if (e.code === 'Space' && !e.target.matches('input, textarea, button, [contenteditable]')) {
       e.preventDefault();
       toggleBtn.click();
     }
   });
+
+  /* ── Dica visual no player para chamar atenção ── */
+  if (player) {
+    // Pulsar suavemente o botão até o usuário interagir
+    toggleBtn.classList.add('pulse-hint');
+    toggleBtn.addEventListener('click', () => {
+      toggleBtn.classList.remove('pulse-hint');
+    }, { once: true });
+  }
 }
 
 
